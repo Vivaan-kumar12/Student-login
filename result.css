@@ -1,0 +1,203 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f3f5ff;
+padding:15px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(0,0,0,.1);
+}
+
+.header{
+background:linear-gradient(
+90deg,
+#4e54c8,
+#8f54ff
+);
+
+color:white;
+padding:20px;
+}
+
+.profile-card{
+padding:20px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.student-photo img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.student-details{
+flex:1;
+}
+
+.student-details p{
+margin:8px 0;
+}
+
+.performance-card{
+padding:20px;
+}
+
+.performance-card h2{
+margin-bottom:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th,
+table td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+table th{
+background:#f0f0ff;
+}
+
+.summary{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(150px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.box{
+background:#f8f8ff;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.remarks{
+padding:20px;
+}
+
+.remarks p{
+background:#f8f8ff;
+padding:15px;
+border-radius:10px;
+margin-top:10px;
+}
+
+.signature{
+padding:20px;
+text-align:right;
+}
+
+.signature img{
+width:180px;
+}
+
+@media(max-width:600px){
+
+.student-photo{
+width:100%;
+text-align:center;
+}
+
+}
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+flex-wrap:wrap;
+}
+
+.header-buttons{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+}
+
+.header-buttons button{
+
+padding:10px 15px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+}
+
+.footer{
+
+padding:20px;
+
+text-align:center;
+
+font-weight:bold;
+
+color:#4e54c8;
+}
+
+@media(max-width:600px){
+
+.header{
+
+gap:15px;
+}
+
+.header-buttons{
+
+width:100%;
+}
+
+.header-buttons button{
+
+flex:1;
+}
+
+}
+
+.result-clock{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+}
+.live-clock,
+.result-clock{
+    white-space: nowrap;
+}
+@media print {
+
+    .header-buttons{
+        display:none !important;
+    }
+
+}

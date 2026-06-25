@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Assessment Result</title>
+
+<link rel="stylesheet"
+href="result.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div>
+
+<h1>ASSESSMENT RESULT</h1>
+
+<p>Monthly Test Result</p>
+
+</div>
+
+<div class="header-buttons">
+
+<button onclick="printResult()">
+Print
+</button>
+
+<button onclick="downloadPDF()">
+Download PDF
+</button>
+
+<button onclick="logoutStudent()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<div class="profile-card">
+
+<div class="student-photo">
+
+<img
+src="Images/student-icon.png"
+alt="Student">
+
+</div>
+
+<div class="student-details">
+
+<p>
+<b>Student Name:</b>
+<span id="studentName"></span>
+</p>
+
+<p>
+<b>Class / Section:</b>
+<span id="studentRoll"></span>
+</p>
+
+<b>Father's Name:</b>
+<span id="fatherName"></span>
+
+<p>
+<b>Section:</b>
+A
+</p>
+
+<p>
+<b>Month:</b>
+<span id="month"></span>
+</p>
+
+</div>
+
+</div>
+
+<div class="performance-card">
+
+<h2>
+Academic Performance
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Subject</th>
+
+<th>Max</th>
+
+<th>Pass</th>
+
+<th>Marks</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="marksTable"></tbody>
+
+</table>
+
+</div>
+
+<div class="summary">
+
+<div class="box">
+
+<h3>Total</h3>
+
+<p id="totalMarks"></p>
+
+</div>
+
+<div class="box">
+
+<h3>Percentage</h3>
+
+<p id="percentage"></p>
+
+</div>
+
+<div class="box">
+
+<h3>Grade</h3>
+
+<p id="grade"></p>
+
+</div>
+
+<div class="box">
+
+<h3>Division</h3>
+
+<p id="division"></p>
+
+</div>
+
+<div class="box">
+
+<h3>Attendance</h3>
+
+<p id="attendance"></p>
+
+</div>
+
+</div>
+
+<div class="remarks">
+
+<h3>
+Teacher's Comment
+</h3>
+
+<p id="comment"></p>
+
+</div>
+
+<div class="signature">
+
+<img
+src="images/teacher-signature.png"
+alt="Signature">
+
+<p>
+Class Teacher Signature
+</p>
+
+</div>
+
+</div>
+
+<script src="result.js"></script>
+
+<div class="footer">
+
+Keep Learning, Keep Growing,
+Keep Succeeding!
+
+<div id="resultClock" class="result-clock"></div>
+
+</div>
+
+
+</body>
+
+</html>
