@@ -250,10 +250,9 @@ totalMarks + " / " + maxMarks;
 document.getElementById("percentage").textContent =
 percentage + "%";
 
-// Grade & Division
+// Grade 
 
 let grade = "";
-let division = "";
 
 if (percentage >= 90) {
     grade = "A1";
@@ -277,26 +276,11 @@ else if (percentage >= 33) {
     grade = "D";
 }
 else {
-    grade = "F";
+    grade = "E";
 }
 
-if (percentage >= 80) {
-    division = "1st";
-}
-else if (percentage >= 50) {
-    division = "2nd";
-}
-else if (percentage >= 33) {
-    division = "3rd";
-}
-else {
-    division = "Fail";
-}
 document.getElementById("grade").textContent =
 grade;
-
-document.getElementById("division").textContent =
-division;
 
 // Attendance
 
@@ -305,15 +289,47 @@ student.attendance;
 
 // Comment
 
-if (percentage >= 80) {
+if (percentage >= 90) {
 
-  document.getElementById("comment").textContent =
-  "Excellent performance! Keep up the good work. Stay focused and aim higher.";
+    document.getElementById("comment").textContent =
+    "Excellent performance! Keep up the good work. Stay focused and aim higher.";
 
-} else {
+}
+else if (percentage >= 80) {
 
-  document.getElementById("comment").textContent =
-  "Needs hard work and regular practice for better improvement.";
+    document.getElementById("comment").textContent =
+    "Outstanding performance! Keep up the excellent work.";
+
+}
+else if (percentage >= 70) {
+
+    document.getElementById("comment").textContent =
+    "Good progress! Displays a solid understanding of the lessons.";
+
+}
+else if (percentage >= 60) {
+
+    document.getElementById("comment").textContent =
+    "Good effort, but needs more practice in core concepts to improve.";
+
+}
+else if (percentage >= 50) {
+
+    document.getElementById("comment").textContent =
+    "An average performance. Needs to pay closer attention during lessons.";
+
+}
+else if (percentage >= 33) {
+
+    document.getElementById("comment").textContent =
+    "Must focus more in class and practice regularly at home to improve scores.";
+
+}
+else {
+
+    document.getElementById("comment").textContent =
+    "Needs hard work and regular practice for better improvement.";
+
 }
 function printResult(){
 
