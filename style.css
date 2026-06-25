@@ -12,7 +12,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    background-Images:url("background.jpg");
+    background-images:url("background.jpg");
     background-size:cover;
     background-position:center;
 }
