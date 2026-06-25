@@ -64,7 +64,7 @@ const students = {
   "312": {
     name: "Shreyansh Singh",
     class: "3",
-    father: " ",
+    father: "Sushil Singh",
     attendance: "89%",
     results: {
 		"June 2026": [
@@ -250,7 +250,7 @@ totalMarks + " / " + maxMarks;
 document.getElementById("percentage").textContent =
 percentage + "%";
 
-// Grade & Division
+// Grade
 
 let grade = "";
 
@@ -289,11 +289,36 @@ student.attendance;
 
 // Comment
 
-if (percentage >= 80) {
+if (percentage >= 90) {
 
   document.getElementById("comment").textContent =
   "Excellent performance! Keep up the good work. Stay focused and aim higher.";
 
+if (percentage >= 80) {
+
+   document.getElementById("comment").textContent =
+   "Outstanding performance! Keep up the excellent work.";
+
+if (percentage >= 70) {
+
+   document.getElementById("comment").textContent =
+   "Good progress! Displays a solid understanding of the lessons.";
+
+if (percentage >= 60) {
+
+   document.getElementById("comment").textContent =
+	"Good effort, but needs more practice in core concepts to improve.";
+
+if (percentage >= 50) {
+
+   document.getElementById("comment").textContent =
+   "An average performance. Needs to pay closer attention during lessons.";
+
+if (percentage >= 33) {
+
+   document.getElementById("comment").textContent =
+   "Must focus more in class and practice regularly at home to improve scores.";
+	
 } else {
 
   document.getElementById("comment").textContent =
