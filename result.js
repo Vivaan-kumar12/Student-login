@@ -250,9 +250,10 @@ totalMarks + " / " + maxMarks;
 document.getElementById("percentage").textContent =
 percentage + "%";
 
-// Grade
+// Grade & Division
 
 let grade = "";
+let division = "";
 
 if (percentage >= 90) {
     grade = "A+";
