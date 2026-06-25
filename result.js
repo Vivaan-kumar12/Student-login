@@ -17,10 +17,10 @@ const students = {
     attendance: "95%",
     results: {
 	     		"June 2026": [
-      ["English", 50, 17, 50],
-      ["Math", 50, 17, 47],
-      ["Hindi", 50, 17, 48],
-      ["Science", 50, 17, 49],
+      ["English", 50, 17, 45],
+      ["Math", 50, 17, 43],
+      ["Hindi", 50, 17, 42],
+      ["Science", 50, 17, 44],
       ["Social Studies", 50, 17, 46],
       ["Computer", 50, 17, 48]
         ]
@@ -34,12 +34,12 @@ const students = {
     attendance: "92%",
     results: {
 			"June 2026": [
-      ["English", 50, 17, 20],
-      ["Math", 50, 17, 26],
-      ["Hindi", 50, 17, 29],
-      ["Science", 50, 17, 33],
-      ["Social Studies", 50, 17, 26],
-      ["Computer", 50, 17, 34]
+      ["English", 50, 17, 40],
+      ["Math", 50, 17, 41],
+      ["Hindi", 50, 17, 39],
+      ["Science", 50, 17, 42],
+      ["Social Studies", 50, 17, 43],
+      ["Computer", 50, 17, 44]
          ]
      }
   },
@@ -64,7 +64,7 @@ const students = {
   "312": {
     name: "Shreyansh Singh",
     class: "3",
-    father: "Sushil Singh",
+    father: " ",
     attendance: "89%",
     results: {
 		"June 2026": [
@@ -256,16 +256,16 @@ let grade = "";
 let division = "";
 
 if (percentage >= 90) {
-    grade = "A+";
+    grade = "A1";
 }
 else if (percentage >= 80) {
-    grade = "A";
+    grade = "A2";
 }
 else if (percentage >= 70) {
-    grade = "B+";
+    grade = "B1";
 }
 else if (percentage >= 60) {
-    grade = "B";
+    grade = "B2";
 }
 else if (percentage >= 50) {
     grade = "C1";
@@ -277,11 +277,26 @@ else if (percentage >= 33) {
     grade = "D";
 }
 else {
-    grade = "E";
+    grade = "F";
 }
 
+if (percentage >= 80) {
+    division = "1st";
+}
+else if (percentage >= 50) {
+    division = "2nd";
+}
+else if (percentage >= 33) {
+    division = "3rd";
+}
+else {
+    division = "Fail";
+}
 document.getElementById("grade").textContent =
 grade;
+
+document.getElementById("division").textContent =
+division;
 
 // Attendance
 
@@ -290,81 +305,72 @@ student.attendance;
 
 // Comment
 
-if (percentage >= 90) {
+if (percentage >= 80) {
 
-    document.getElementById("comment").textContent =
-    "Excellent performance! Keep up the good work. Stay focused and aim higher.";
+  document.getElementById("comment").textContent =
+  "Excellent performance! Keep up the good work. Stay focused and aim higher.";
 
+} else {
+
+  document.getElementById("comment").textContent =
+  "Needs hard work and regular practice for better improvement.";
 }
-else if (percentage >= 80) {
-
-    document.getElementById("comment").textContent =
-    "Outstanding performance! Keep up the excellent work.";
-
-}
-else if (percentage >= 70) {
-
-    document.getElementById("comment").textContent =
-    "Good progress! Displays a solid understanding of the lessons.";
-
-}
-else if (percentage >= 60) {
-
-    document.getElementById("comment").textContent =
-    "Good effort, but needs more practice in core concepts to improve.";
-
-}
-else if (percentage >= 50) {
-
-    document.getElementById("comment").textContent =
-    "An average performance. Needs to pay closer attention during lessons.";
-
-}
-else if (percentage >= 33) {
-
-    document.getElementById("comment").textContent =
-    "Must focus more in class and practice regularly at home to improve scores.";
-
-}
-else {
-
-    document.getElementById("comment").textContent =
-    "Needs hard work and regular practice for better improvement.";
-
-}
-
 function printResult(){
-    window.print();
+
+window.print();
+
 }
 
 function downloadPDF(){
-    window.print();
+
+window.print();
+
 }
 
 function logoutStudent(){
-    localStorage.clear();
-    sessionStorage.clear();
-    window.location.replace("index.html");
-}
 
-history.pushState(null, null, location.href);
+localStorage.clear();
+
+sessionStorage.clear();
+
+window.location.replace(
+"index.html"
+);
+
+}
+history.pushState(null,null,location.href);
+
 window.onpopstate = function(){
+
     history.go(1);
+
 };
 
 function updateClock(){
+
     const clock = document.getElementById("resultClock");
+
     if(!clock){
         return;
     }
-    const now = new Date();
-    const time = now.toLocaleTimeString('en-IN');
-    const day = now.toLocaleDateString('en-IN', { weekday: 'long' });
-    const date = now.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 
-    clock.innerHTML = `${time} | ${day} | ${date}`;
+    const now = new Date();
+
+    const time = now.toLocaleTimeString('en-IN');
+
+    const day = now.toLocaleDateString('en-IN',{
+        weekday:'long'
+    });
+
+    const date = now.toLocaleDateString('en-IN',{
+        day:'numeric',
+        month:'long',
+        year:'numeric'
+    });
+
+    clock.innerHTML =
+    `${time} | ${day} | ${date}`;
 }
 
 updateClock();
-setInterval(updateClock, 1000);
-		 
+setInterval(updateClock,1000);
