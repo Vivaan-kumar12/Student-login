@@ -287,99 +287,62 @@ grade;
 document.getElementById("attendance").textContent =
 student.attendance;
 
-// Comment
+// Comment 
 
-if (percentage >= 90) {
-
-  document.getElementById("comment").textContent =
-  "Excellent performance! Keep up the good work. Stay focused and aim higher.";
-
-if (percentage >= 80) {
-
-   document.getElementById("comment").textContent =
-   "Outstanding performance! Keep up the excellent work.";
-
-if (percentage >= 70) {
-
-   document.getElementById("comment").textContent =
-   "Good progress! Displays a solid understanding of the lessons.";
-
-if (percentage >= 60) {
-
-   document.getElementById("comment").textContent =
-	"Good effort, but needs more practice in core concepts to improve.";
-
-if (percentage >= 50) {
-
-   document.getElementById("comment").textContent =
-   "An average performance. Needs to pay closer attention during lessons.";
-
-if (percentage >= 33) {
-
-   document.getElementById("comment").textContent =
-   "Must focus more in class and practice regularly at home to improve scores.";
-	
-} else {
-
-  document.getElementById("comment").textContent =
-  "Needs hard work and regular practice for better improvement.";
+if (percentage >= 91) {
+    document.getElementById("comment").textContent = "Outstanding performance! Keep up the excellent work.";
+} 
+else if (percentage >= 81) {
+    document.getElementById("comment").textContent = "Very strong academic performance. Keep doing great!";
+} 
+else if (percentage >= 71) {
+    document.getElementById("comment").textContent = "Good progress! Displays a solid understanding of the lessons.";
+} 
+else if (percentage >= 61) {
+    document.getElementById("comment").textContent = "Good effort, but needs more practice in core concepts to improve.";
+} 
+else if (percentage >= 51) {
+    document.getElementById("comment").textContent = "An average performance. Needs to pay closer attention during lessons.";
+} 
+else if (percentage >= 33) {
+    document.getElementById("comment").textContent = "Must focus more in class and practice regularly at home to improve scores.";
+} 
+else {
+    document.getElementById("comment").textContent = "Needs hard work and regular practice for better improvement.";
 }
+
 function printResult(){
-
-window.print();
-
+    window.print();
 }
 
 function downloadPDF(){
-
-window.print();
-
+    window.print();
 }
 
 function logoutStudent(){
-
-localStorage.clear();
-
-sessionStorage.clear();
-
-window.location.replace(
-"index.html"
-);
-
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.replace("index.html");
 }
-history.pushState(null,null,location.href);
 
+history.pushState(null, null, location.href);
 window.onpopstate = function(){
-
     history.go(1);
-
 };
 
 function updateClock(){
-
     const clock = document.getElementById("resultClock");
-
     if(!clock){
         return;
     }
-
     const now = new Date();
-
     const time = now.toLocaleTimeString('en-IN');
+    const day = now.toLocaleDateString('en-IN', { weekday: 'long' });
+    const date = now.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
 
-    const day = now.toLocaleDateString('en-IN',{
-        weekday:'long'
-    });
-
-    const date = now.toLocaleDateString('en-IN',{
-        day:'numeric',
-        month:'long',
-        year:'numeric'
-    });
-
-    clock.innerHTML =
-    `${time} | ${day} | ${date}`;
+    clock.innerHTML = `${time} | ${day} | ${date}`;
 }
 
 updateClock();
-setInterval(updateClock,1000);
+setInterval(updateClock, 1000);
+		 
