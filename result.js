@@ -253,7 +253,6 @@ percentage + "%";
 // Grade & Division
 
 let grade = "";
-let division = "";
 
 if (percentage >= 90) {
     grade = "A+";
