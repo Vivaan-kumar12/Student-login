@@ -256,16 +256,16 @@ let grade = "";
 let division = "";
 
 if (percentage >= 90) {
-    grade = "A1";
+    grade = "A+";
 }
 else if (percentage >= 80) {
-    grade = "A2";
+    grade = "A";
 }
 else if (percentage >= 70) {
-    grade = "B1";
+    grade = "B+";
 }
 else if (percentage >= 60) {
-    grade = "B2";
+    grade = "B";
 }
 else if (percentage >= 50) {
     grade = "C1";
@@ -277,26 +277,11 @@ else if (percentage >= 33) {
     grade = "D";
 }
 else {
-    grade = "F";
+    grade = "E";
 }
 
-if (percentage >= 80) {
-    division = "1st";
-}
-else if (percentage >= 50) {
-    division = "2nd";
-}
-else if (percentage >= 33) {
-    division = "3rd";
-}
-else {
-    division = "Fail";
-}
 document.getElementById("grade").textContent =
 grade;
-
-document.getElementById("division").textContent =
-division;
 
 // Attendance
 
