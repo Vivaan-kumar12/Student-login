@@ -21,6 +21,7 @@ body{
 
     width:90%;
     max-width:420px;
+    transition:.4s;
 
     padding:30px;
 
@@ -28,11 +29,25 @@ body{
 
     backdrop-filter:blur(10px);
 
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,255,255,.18);
 
     border:1px solid rgba(255,255,255,0.3);
 
     color:white;
+}
+
+.login-box:hover{
+
+transform:
+
+translateY(-5px)
+
+scale(1.02);
+
+box-shadow:
+
+0 0 45px rgba(255,255,255,.35);
+
 }
 
 .login-box h1{
@@ -96,3 +111,41 @@ body{
     text-shadow: 0 0 10px black;
     z-index: 999;
 }
+
+
+.login-box{
+
+opacity:0;
+
+transform:translateY(50px) scale(.95);
+
+animation:loginAnimation 1.2s ease forwards;
+
+box-shadow:
+0 0 30px rgba(255,255,255,.15);
+
+}
+
+@keyframes loginAnimation{
+
+0%{
+
+opacity:0;
+
+transform:
+translateY(50px)
+scale(.95);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+    }
