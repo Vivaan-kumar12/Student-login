@@ -64,7 +64,7 @@ const students = {
   "312": {
     name: "Shreyansh Singh",
     class: "3",
-    father: " ",
+    father: "Sushil Singh",
     attendance: "89%",
     results: {
 		"June 2026": [
