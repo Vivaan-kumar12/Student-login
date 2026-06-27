@@ -3,14 +3,8 @@ import { db } from "./Firebase.js";
 import {
 doc,
 setDoc
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-import {
-  collection,
-  addDoc
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 if(!localStorage.getItem("adminPassword")){
 
 localStorage.setItem(
@@ -22,16 +16,33 @@ localStorage.setItem(
 
 function adminLogin(){
 
-// Login code
-
-}
-window.adminLogin = adminLogin;
-  
-const username =
+const username = admin
 document.getElementById("username").value.trim();
 
-const password =
+const password = 12345
 document.getElementById("password").value.trim();
+
+if(
+username==="admin" &&
+password===localStorage.getItem("adminPassword")
+){
+
+sessionStorage.setItem(
+"adminLoggedIn",
+"true"
+);
+
+window.location.href="dashboard.html";
+
+}else{
+
+alert("Invalid Username or Password");
+
+}
+
+}
+
+window.adminLogin = adminLogin;
 
 if(
 username==="admin"
@@ -75,17 +86,17 @@ window.location.replace(
 
 function adminLogout(){
 
-// Logout code
+if(confirm("Are you sure you want to logout?")){
+
+sessionStorage.removeItem("adminLoggedIn");
+
+window.location.href="admin.html";
+
+}
 
 }
 
 window.adminLogout = adminLogout;
-
-if(
-confirm(
-"Are you sure you want to logout?"
-)
-){
 
 sessionStorage.removeItem(
 "adminLoggedIn"
@@ -416,7 +427,7 @@ percentage>=33 ? "PASS" : "FAIL";
 
 }
 
-  let comment="";
+let comment="";
 
 if(percentage>=80){
 
