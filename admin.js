@@ -1,3 +1,10 @@
+import { db } from "./Firebase.js";
+
+import {
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 if(!localStorage.getItem("adminPassword")){
 
 localStorage.setItem(
@@ -299,21 +306,28 @@ document.getElementById(
 
 }
 
-function saveStudent(){
+async function saveStudent() {
 
-const status =
-document.getElementById("publishStatus").value;
+  const studentData = {
+    roll: editRoll,
+    name: document.getElementById("studentName").value,
+    father: document.getElementById("fatherName").value,
+    attendance: document.getElementById("attendance").value,
+    month: document.getElementById("month").value,
+    publishStatus: document.getElementById("publishStatus").value
+  };
 
-localStorage.setItem(
-"publishStatus",
-status
-);
+  try {
 
-alert(
+    await addDoc(collection(db, "students"), studentData);
 
-"Demo Mode\n\nStudent data has been validated successfully.\n\nPermanent saving will be available after Firebase integration."
+    alert("Student data saved successfully!");
 
-);
+  } catch (error) {
+
+    alert("Error: " + error.message);
+
+  }
 
 }
 function calculatePreview(){
