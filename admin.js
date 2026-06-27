@@ -310,7 +310,9 @@ status
 );
 
 alert(
-"Demo Saved Successfully"
+
+"Demo Mode\n\nStudent data has been validated successfully.\n\nPermanent saving will be available after Firebase integration."
+
 );
 
 }
