@@ -176,3 +176,62 @@ transform:translateY(-4px);
 background:#6b6cff;
 
 }
+
+.student-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+}
+
+.student-table th,
+.student-table td{
+
+border:1px solid #ddd;
+
+padding:12px;
+
+text-align:center;
+
+}
+
+.student-table th{
+
+background:#4e54c8;
+
+color:white;
+
+}
+
+.student-table tr:nth-child(even){
+
+background:#f8f8ff;
+
+}
+
+.student-table button{
+
+padding:8px 16px;
+
+border:none;
+
+border-radius:6px;
+
+background:#28a745;
+
+color:white;
+
+cursor:pointer;
+
+font-weight:bold;
+
+}
+
+.student-table button:hover{
+
+background:#218838;
+
+}
