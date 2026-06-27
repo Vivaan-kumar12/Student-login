@@ -415,27 +415,6 @@ percentage>=33 ? "PASS" : "FAIL";
 
 }
 
-let rank="Unsatisfied";
-
-if(percentage>=90){
-
-rank="1st";
-
-}
-else if(percentage>=80){
-
-rank="2nd";
-
-}
-else if(percentage>=70){
-
-rank="3rd";
-
-}
-
-document.getElementById("previewRank").textContent =
-rank;
-
   let comment="";
 
 if(percentage>=80){
@@ -624,3 +603,10 @@ input.value=0;
 }
 
 }
+
+window.saveStudent = saveStudent;
+window.editStudent = editStudent;
+window.changeMonth = changeMonth;
+window.changePassword = changePassword;
+window.searchStudent = searchStudent;
+window.validateMarks = validateMarks;
