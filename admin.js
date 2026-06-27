@@ -448,3 +448,16 @@ monthSelect.appendChild(option);
 }
 
   }
+
+function changeMonth(){
+
+const selectedMonth =
+document.getElementById("month").value;
+
+alert(
+"Selected Month : " +
+selectedMonth +
+"\n\nDatabase support will be added in Chapter 5."
+);
+
+}
