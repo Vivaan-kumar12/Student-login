@@ -296,3 +296,27 @@ font-size:16px;
 width:100%;
 
 }
+
+.preview-box{
+
+margin-top:20px;
+
+padding:20px;
+
+background:#f5f7ff;
+
+border-radius:10px;
+
+border:1px solid #ddd;
+
+}
+
+.preview-box p{
+
+margin:10px 0;
+
+font-size:17px;
+
+font-weight:bold;
+
+}
