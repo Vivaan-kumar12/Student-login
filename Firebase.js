@@ -1,5 +1,6 @@
 // Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDC0bSVvhqkRPZ8ivBBvGgkPYv7JBoazJk",
@@ -13,4 +14,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export { app };
+// Initialize Firestore
+const db = getFirestore(app);
+
+export { app, db };
