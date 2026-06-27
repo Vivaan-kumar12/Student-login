@@ -29,7 +29,8 @@ localStorage.setItem(
 }
 
 function adminLogin(){
-
+window.adminLogin = adminLogin;
+  
 const username =
 document.getElementById("username").value.trim();
 
@@ -77,6 +78,7 @@ window.location.replace(
 }
 
 function adminLogout(){
+  window.adminLogout = adminLogout;
 
 if(
 confirm(
