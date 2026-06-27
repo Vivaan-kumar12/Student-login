@@ -125,3 +125,37 @@ window.location.href =
 "edit-student.html";
 
 }
+
+const editRoll =
+localStorage.getItem("editRoll");
+
+if(
+window.location.pathname
+.includes("edit-student.html")
+){
+
+document.getElementById(
+"studentName"
+).value = "";
+
+document.getElementById(
+"fatherName"
+).value = "";
+
+document.getElementById(
+"attendance"
+).value = "";
+
+document.getElementById(
+"month"
+).value = "";
+
+}
+
+function saveStudent(){
+
+alert(
+"Save feature will be added in Chapter 4 Part 4"
+);
+
+}
