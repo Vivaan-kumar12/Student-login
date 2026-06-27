@@ -17,7 +17,7 @@ sessionStorage.setItem(
 "true"
 );
 
-alert("Login Successful");
+window.location.href = "dashboard.html";
 
 }
 else{
