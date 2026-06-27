@@ -134,9 +134,24 @@ window.location.pathname
 .includes("edit-student.html")
 ){
 
-document.getElementById(
-"studentName"
-).value = "";
+const student =
+studentList.find(s=>s.roll===editRoll);
+
+if(student){
+
+document.getElementById("studentName").value =
+student.name;
+
+document.getElementById("fatherName").value =
+student.father;
+
+document.getElementById("attendance").value =
+student.attendance;
+
+document.getElementById("month").value =
+"June 2026";
+
+}
 
 document.getElementById(
 "fatherName"
@@ -155,7 +170,7 @@ document.getElementById(
 function saveStudent(){
 
 alert(
-"Save feature will be added in Chapter 4 Part 4"
+"Demo Mode\n\nChanges are visible only in this session.\nPermanent Save will be added with Firebase Database in Chapter 5."
 );
 
 }
