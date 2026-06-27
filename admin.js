@@ -121,4 +121,10 @@ window.location.replace(
 
 window.adminLogout = adminLogout;
 
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", adminLogout);
+}
+
 
