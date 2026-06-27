@@ -122,3 +122,16 @@ window.location.replace(
 window.adminLogout = adminLogout;
 const logoutBtn = document.getElementById("logoutBtn");
 
+function adminLogout() {
+
+    if (confirm("Are you sure you want to logout?")) {
+
+        sessionStorage.removeItem("adminLoggedIn");
+
+        window.location.href = "admin.html";
+
+    }
+
+}
+
+window.adminLogout = adminLogout;
