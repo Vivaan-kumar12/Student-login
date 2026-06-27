@@ -203,9 +203,10 @@ student.father;
 document.getElementById("attendance").value =
 student.attendance;
 
+loadMonths();
+
 document.getElementById("month").value =
 "June 2026";
-
 }
 
   const marksEditor=
