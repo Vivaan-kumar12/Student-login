@@ -1,3 +1,16 @@
+import { db } from "./Firebase.js";
+
+import {
+doc,
+setDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+import {
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
 if(!localStorage.getItem("adminPassword")){
 
 localStorage.setItem(
