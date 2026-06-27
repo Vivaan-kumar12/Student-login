@@ -167,6 +167,47 @@ console.log("Selected Month =", month);
 
 const student = students[roll];
 
+const publishStatus =
+localStorage.getItem("publishStatus");
+
+if(
+publishStatus==="unpublished"
+){
+
+document.body.innerHTML=`
+
+<div style="
+
+text-align:center;
+
+padding:80px;
+
+font-family:Arial;
+
+">
+
+<h1>
+
+Result Not Published Yet
+
+</h1>
+
+<p>
+
+Please contact your Examiner.
+
+</p>
+
+</div>
+
+`;
+
+throw new Error(
+"Result Hidden"
+);
+
+}
+
 if (!student) {
     alert("Student data not found");
     window.location.href = "index.html";
