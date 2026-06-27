@@ -27,3 +27,32 @@ alert("Invalid Username or Password");
 }
 
 }
+
+if(
+window.location.pathname
+.includes("dashboard.html")
+){
+
+if(
+sessionStorage.getItem("adminLoggedIn")
+!=="true"
+){
+
+window.location.replace(
+"admin.html"
+);
+
+}
+
+}
+
+function adminLogout(){
+
+sessionStorage.removeItem(
+"adminLoggedIn"
+);
+
+window.location.replace(
+"admin.html"
+);
+}
