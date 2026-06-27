@@ -390,3 +390,60 @@ comment=
 
 document.getElementById("previewComment").textContent =
 comment;
+
+function loadMonths(){
+
+const monthSelect =
+document.getElementById("month");
+
+if(!monthSelect){
+
+return;
+
+}
+
+monthSelect.innerHTML="";
+
+const months=[
+
+"January",
+"February",
+"March",
+"April",
+"May",
+"June",
+"July",
+"August",
+"September",
+"October",
+"November",
+"December"
+
+];
+
+for(let year=2026;year<=2027;year++){
+
+for(let i=0;i<months.length;i++){
+
+if(year===2026 && i<5){
+
+continue;
+
+}
+
+const option=
+document.createElement("option");
+
+option.value=
+months[i]+" "+year;
+
+option.textContent=
+months[i]+" "+year;
+
+monthSelect.appendChild(option);
+
+}
+
+}
+
+  }
