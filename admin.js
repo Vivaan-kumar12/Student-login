@@ -220,6 +220,18 @@ classSubjects[student.class];
 
 subjects.forEach(subject=>{
 
+const maxMarks =
+(student.class=="1" ||
+student.class=="2" ||
+student.class=="3")
+?50:60;
+
+const passMarks =
+(student.class=="1" ||
+student.class=="2" ||
+student.class=="3")
+?17:20;
+
 marksEditor.innerHTML+=`
 
 <div class="subject-row">
@@ -227,12 +239,23 @@ marksEditor.innerHTML+=`
 <label>
 
 ${subject}
+<br>
+
+<small>
+
+Max : ${maxMarks}
+&nbsp;&nbsp;
+
+Pass : ${passMarks}
+
+</small>
 
 </label>
 
 <input
 type="number"
 min="0"
+max="${maxMarks}"
 oninput="calculatePreview()"
 placeholder="Marks">
 
@@ -241,7 +264,6 @@ placeholder="Marks">
 `;
 
 });
-
 }
 
 document.getElementById(
@@ -329,3 +351,42 @@ document.getElementById("previewStatus").textContent =
 percentage>=33 ? "PASS" : "FAIL";
 
 }
+
+let rank="Unsatisfied";
+
+if(percentage>=90){
+
+rank="1st";
+
+}
+else if(percentage>=80){
+
+rank="2nd";
+
+}
+else if(percentage>=70){
+
+rank="3rd";
+
+}
+
+document.getElementById("previewRank").textContent =
+rank;
+
+  let comment="";
+
+if(percentage>=80){
+
+comment=
+"Excellent performance! Keep up the good work. Stay focused and aim higher.";
+
+}
+else{
+
+comment=
+"Needs hard work and regular practice for better improvement.";
+
+}
+
+document.getElementById("previewComment").textContent =
+comment;
