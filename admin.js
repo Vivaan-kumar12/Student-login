@@ -208,6 +208,40 @@ document.getElementById("month").value =
 
 }
 
+  const marksEditor=
+document.getElementById("marksEditor");
+
+if(marksEditor){
+
+marksEditor.innerHTML="";
+
+const subjects=
+classSubjects[student.class];
+
+subjects.forEach(subject=>{
+
+marksEditor.innerHTML+=`
+
+<div class="subject-row">
+
+<label>
+
+${subject}
+
+</label>
+
+<input
+type="number"
+placeholder="Marks">
+
+</div>
+
+`;
+
+});
+
+}
+
 document.getElementById(
 "fatherName"
 ).value = "";
