@@ -526,3 +526,36 @@ alert("Password Changed Successfully");
 window.location.href="dashboard.html";
 
 }
+
+function searchStudent(){
+
+const input =
+document.getElementById("searchStudent");
+
+if(!input){
+
+return;
+
+}
+
+const filter =
+input.value.toLowerCase();
+
+const rows =
+document.querySelectorAll(".student-table tbody tr");
+
+rows.forEach(row=>{
+
+const text =
+row.textContent.toLowerCase();
+
+row.style.display =
+text.includes(filter)
+?
+""
+:
+"none";
+
+});
+
+}
