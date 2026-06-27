@@ -142,7 +142,13 @@ function loginStudent(){
 
 sessionStorage.setItem("loggedIn","true");
 
+document.getElementById("loader").style.display = "flex";
+
+setTimeout(function(){
+
 window.location.href = "result.html";
+
+},1500);
 
 }
 
