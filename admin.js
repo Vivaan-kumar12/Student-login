@@ -24,7 +24,7 @@ document.getElementById("password").value.trim();
 
 if(
 username==="admin" &&
-password===localStorage.getItem("adminPassword")
+password==="12345"
 ){
 
 sessionStorage.setItem(
