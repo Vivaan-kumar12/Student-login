@@ -116,6 +116,12 @@ Edit
 
 function editStudent(roll){
 
-alert("Edit Student: " + roll);
+localStorage.setItem(
+"editRoll",
+roll
+);
+
+window.location.href =
+"edit-student.html";
 
 }
