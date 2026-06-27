@@ -57,6 +57,12 @@ window.location.replace(
 
 function adminLogout(){
 
+if(
+confirm(
+"Are you sure you want to logout?"
+)
+){
+
 sessionStorage.removeItem(
 "adminLoggedIn"
 );
@@ -64,6 +70,9 @@ sessionStorage.removeItem(
 window.location.replace(
 "admin.html"
 );
+
+}
+
 }
 
 const studentList = [
