@@ -283,12 +283,19 @@ document.getElementById(
 
 function saveStudent(){
 
+const status =
+document.getElementById("publishStatus").value;
+
+localStorage.setItem(
+"publishStatus",
+status
+);
+
 alert(
-"Demo Mode\n\nChanges are visible only in this session.\nPermanent Save will be added with Firebase Database in Chapter 5."
+"Demo Saved Successfully"
 );
 
 }
-
 function calculatePreview(){
 
 const inputs =
