@@ -275,7 +275,7 @@ Pass : ${passMarks}
 type="number"
 min="0"
 max="${maxMarks}"
-oninput="calculatePreview()"
+oninput="validateMarks(this);calculatePreview()"
 placeholder="Marks">
 
 </div>
