@@ -232,6 +232,8 @@ ${subject}
 
 <input
 type="number"
+min="0"
+oninput="calculatePreview()"
 placeholder="Marks">
 
 </div>
@@ -261,5 +263,69 @@ function saveStudent(){
 alert(
 "Demo Mode\n\nChanges are visible only in this session.\nPermanent Save will be added with Firebase Database in Chapter 5."
 );
+
+}
+
+function calculatePreview(){
+
+const inputs =
+document.querySelectorAll("#marksEditor input");
+
+let total = 0;
+
+let max = 0;
+
+inputs.forEach(input=>{
+
+const value =
+Number(input.value)||0;
+
+total += value;
+
+if(inputs.length==6){
+
+max += 50;
+
+}
+else{
+
+max += 60;
+
+}
+
+});
+
+const percentage =
+((total/max)*100).toFixed(2);
+
+document.getElementById("previewTotal").textContent =
+total+" / "+max;
+
+document.getElementById("previewPercentage").textContent =
+percentage+"%";
+
+let grade="E";
+
+if(percentage>=90){
+
+grade="A+";
+
+}
+else if(percentage>=80){
+
+grade="A";
+
+}
+else if(percentage>=70){
+
+grade="B";
+
+}
+
+document.getElementById("previewGrade").textContent =
+grade;
+
+document.getElementById("previewStatus").textContent =
+percentage>=33 ? "PASS" : "FAIL";
 
 }
