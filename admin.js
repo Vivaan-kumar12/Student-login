@@ -477,3 +477,52 @@ selectedMonth +
 );
 
 }
+
+function changePassword(){
+
+const oldPass =
+document.getElementById("oldPassword").value;
+
+const newPass =
+document.getElementById("newPassword").value;
+
+const confirmPass =
+document.getElementById("confirmPassword").value;
+
+const currentPass =
+localStorage.getItem("adminPassword");
+
+if(oldPass!==currentPass){
+
+alert("Old Password is Incorrect");
+
+return;
+
+}
+
+if(newPass.length<4){
+
+alert("Password must be at least 4 characters");
+
+return;
+
+}
+
+if(newPass!==confirmPass){
+
+alert("Passwords do not match");
+
+return;
+
+}
+
+localStorage.setItem(
+"adminPassword",
+newPass
+);
+
+alert("Password Changed Successfully");
+
+window.location.href="dashboard.html";
+
+}
