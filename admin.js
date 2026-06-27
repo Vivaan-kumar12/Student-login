@@ -1,3 +1,17 @@
+import { app } from "./Firebase.js";
+
+import {
+getFirestore,
+collection,
+doc,
+setDoc,
+getDoc,
+getDocs,
+updateDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const db = getFirestore(app);
+
 import { db } from "./Firebase.js";
 
 import {
@@ -308,28 +322,33 @@ document.getElementById(
 
 async function saveStudent() {
 
-  const studentData = {
-    roll: editRoll,
-    name: document.getElementById("studentName").value,
-    father: document.getElementById("fatherName").value,
-    attendance: document.getElementById("attendance").value,
-    month: document.getElementById("month").value,
-    publishStatus: document.getElementById("publishStatus").value
-  };
+const roll = localStorage.getItem("editRoll");
 
-  try {
+const status =
+document.getElementById("publishStatus").value;
 
-    await addDoc(collection(db, "students"), studentData);
+await setDoc(doc(db, "students", roll), {
 
-    alert("Student data saved successfully!");
+roll: roll,
 
-  } catch (error) {
+name: document.getElementById("studentName").value,
 
-    alert("Error: " + error.message);
+father:
+document.getElementById("fatherName").value,
 
-  }
+attendance:
+document.getElementById("attendance").value,
 
+month:
+document.getElementById("month").value,
+
+publishStatus: status
+
+});
+
+alert("Student Saved Successfully");
 }
+
 function calculatePreview(){
 
 const inputs =
