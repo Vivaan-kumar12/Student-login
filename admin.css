@@ -235,3 +235,19 @@ font-weight:bold;
 background:#218838;
 
 }
+
+.dashboard input{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:15px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:16px;
+
+}
