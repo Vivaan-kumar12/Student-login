@@ -1,3 +1,12 @@
+if(!localStorage.getItem("adminPassword")){
+
+localStorage.setItem(
+"adminPassword",
+"12345"
+);
+
+}
+
 function adminLogin(){
 
 const username =
