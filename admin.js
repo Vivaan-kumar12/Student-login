@@ -568,3 +568,22 @@ text.includes(filter)
 });
 
 }
+
+function validateMarks(input){
+
+const max =
+Number(input.max);
+
+if(Number(input.value)>max){
+
+input.value=max;
+
+}
+
+if(Number(input.value)<0){
+
+input.value=0;
+
+}
+
+}
