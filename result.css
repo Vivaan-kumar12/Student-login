@@ -201,3 +201,152 @@ flex:1;
     }
 
 }
+
+.container{
+
+animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.profile-card,
+.performance-card,
+.summary,
+.remarks,
+.signature{
+
+opacity:0;
+
+animation:cardAnimation .8s ease forwards;
+
+}
+
+.profile-card{
+
+animation-delay:.2s;
+
+}
+
+.performance-card{
+
+animation-delay:.4s;
+
+}
+
+.summary{
+
+animation-delay:.6s;
+
+}
+
+.remarks{
+
+animation-delay:.8s;
+
+}
+
+.signature{
+
+animation-delay:1s;
+
+}
+
+@keyframes cardAnimation{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+#marksTable tr{
+
+opacity:0;
+
+animation:rowAnimation .5s ease forwards;
+
+}
+
+#marksTable tr:nth-child(1){animation-delay:.2s;}
+#marksTable tr:nth-child(2){animation-delay:.3s;}
+#marksTable tr:nth-child(3){animation-delay:.4s;}
+#marksTable tr:nth-child(4){animation-delay:.5s;}
+#marksTable tr:nth-child(5){animation-delay:.6s;}
+#marksTable tr:nth-child(6){animation-delay:.7s;}
+
+@keyframes rowAnimation{
+
+from{
+
+opacity:0;
+
+transform:translateX(-30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+    }
+
+.box{
+
+transition:.3s ease;
+
+}
+
+.box:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+}
+
+table tr{
+
+transition:.3s;
+
+}
+
+table tr:hover{
+
+background:#f3f6ff;
+
+}
