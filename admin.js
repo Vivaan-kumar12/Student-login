@@ -1,18 +1,9 @@
-import { app } from "./Firebase.js";
+import { db } from "./Firebase.js";
 
 import {
-getFirestore,
-collection,
 doc,
-setDoc,
-getDoc,
-getDocs,
-updateDoc
+setDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
-const db = getFirestore(app);
-
-import { db } from "./Firebase.js";
 
 import {
   collection,
@@ -29,6 +20,10 @@ localStorage.setItem(
 }
 
 function adminLogin(){
+
+// Login code
+
+}
 window.adminLogin = adminLogin;
   
 const username =
@@ -78,7 +73,12 @@ window.location.replace(
 }
 
 function adminLogout(){
-  window.adminLogout = adminLogout;
+
+// Logout code
+
+}
+
+window.adminLogout = adminLogout;
 
 if(
 confirm(
