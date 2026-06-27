@@ -251,3 +251,48 @@ border-radius:8px;
 font-size:16px;
 
 }
+
+#marksEditor{
+
+margin-top:20px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.subject-row{
+
+display:grid;
+
+grid-template-columns:
+2fr 1fr;
+
+gap:10px;
+
+align-items:center;
+
+}
+
+.subject-row label{
+
+font-weight:bold;
+
+}
+
+.subject-row input{
+
+padding:10px;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+
+font-size:16px;
+
+width:100%;
+
+}
