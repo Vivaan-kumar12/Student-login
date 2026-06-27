@@ -142,7 +142,9 @@ function loginStudent(){
 
 sessionStorage.setItem("loggedIn","true");
 
-document.getElementById("loader").style.display = "flex";
+document.querySelector(".login-box button").disabled = true;
+    
+    document.getElementById("loader").style.display = "flex";
 
 setTimeout(function(){
 
