@@ -127,4 +127,20 @@ if (logoutBtn) {
     logoutBtn.addEventListener("click", adminLogout);
 }
 
+console.log("admin.js loaded");
 
+const logoutBtn = document.getElementById("logoutBtn");
+
+console.log(logoutBtn);
+
+if (logoutBtn) {
+
+console.log("Button Found");
+
+logoutBtn.addEventListener("click", () => {
+
+alert("Logout Button Clicked");
+
+});
+
+}
