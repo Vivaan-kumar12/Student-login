@@ -180,6 +180,7 @@ alert(studentList.length);
 // ==========================
 
 const tableBody = document.getElementById("studentTable");
+alert(tableBody);
 
 if (tableBody) {
 
