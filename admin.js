@@ -172,6 +172,7 @@ const studentList = [
 }
 
 ];
+alert(studentList.length);
 
 
 // ==========================
