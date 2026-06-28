@@ -301,6 +301,9 @@ if (window.location.pathname.includes("edit-student.html")) {
         document.getElementById("fatherName").value = student.father;
 
         document.getElementById("attendance").value = student.attendance;
+      loadMonths();
+
+        document.getElementById("month").value = "June 2026";
 
     }
 
