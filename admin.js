@@ -172,13 +172,14 @@ const studentList = [
 }
 
 ];
+alert("Student List End");
 alert(studentList.length);
 
 
 // ==========================
 // Student Table
 // ==========================
-
+alert("Before Table");
 const tableBody = document.getElementById("studentTable");
 alert(tableBody);
 
