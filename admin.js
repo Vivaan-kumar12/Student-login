@@ -310,6 +310,57 @@ if (window.location.pathname.includes("edit-student.html")) {
 
 }
 
+const marksEditor = document.getElementById("marksEditor");
+
+if (marksEditor) {
+
+    marksEditor.innerHTML = "";
+
+    const subjects = classSubjects[student.class];
+
+    subjects.forEach(subject => {
+
+        const maxMarks =
+            (student.class === "1" ||
+             student.class === "2" ||
+             student.class === "3")
+            ? 50
+            : 60;
+
+        const passMarks =
+            (student.class === "1" ||
+             student.class === "2" ||
+             student.class === "3")
+            ? 17
+            : 20;
+
+        marksEditor.innerHTML += `
+        <div class="subject-row">
+
+            <label>
+                ${subject}
+                <br>
+                <small>
+                    Max : ${maxMarks}
+                    &nbsp;&nbsp;
+                    Pass : ${passMarks}
+                </small>
+            </label>
+
+            <input
+                type="number"
+                min="0"
+                max="${maxMarks}"
+                placeholder="Enter Marks"
+                oninput="calculatePreview()">
+
+        </div>
+        `;
+
+    });
+
+}
+
 // ==========================
 // Load Months
 // ==========================
