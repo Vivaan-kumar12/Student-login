@@ -171,3 +171,40 @@ const studentList = [
 }
 
 ];
+
+
+// ==========================
+// Student Table
+// ==========================
+
+const tableBody = document.getElementById("studentTable");
+
+if (tableBody) {
+
+    studentList.forEach(student => {
+
+        tableBody.innerHTML += `
+        <tr>
+
+            <td>${student.roll}</td>
+
+            <td>${student.name}</td>
+
+            <td>${student.class}</td>
+
+            <td>
+
+                <button onclick="editStudent('${student.roll}')">
+
+                    Edit
+
+                </button>
+
+            </td>
+
+        </tr>
+        `;
+
+    });
+
+}
