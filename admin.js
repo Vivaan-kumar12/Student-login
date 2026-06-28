@@ -74,13 +74,11 @@ if (
 
 function adminLogout() {
 
-    if (confirm("Logout?")) {
+    alert("Logout function called");
 
-        sessionStorage.clear();
+    sessionStorage.clear();
 
-        window.location.replace("admin.html");
-
-    }
+    window.location.replace("admin.html");
 
 }
 
