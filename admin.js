@@ -223,3 +223,62 @@ function editStudent(roll) {
 }
 
 window.editStudent = editStudent;
+
+// ==========================
+// Class Subjects
+// ==========================
+
+const classSubjects = {
+
+    "1": [
+        "English",
+        "Math",
+        "Hindi",
+        "Science",
+        "Social Studies",
+        "Computer"
+    ],
+
+    "2": [
+        "English",
+        "Math",
+        "Hindi",
+        "Science",
+        "Social Studies",
+        "Computer"
+    ],
+
+    "3": [
+        "English",
+        "Math",
+        "Hindi",
+        "Science",
+        "Social Studies",
+        "Computer"
+    ],
+
+    "4": [
+        "English",
+        "Math",
+        "Hindi",
+        "Science",
+        "Social Studies"
+    ],
+
+    "5": [
+        "English",
+        "Math",
+        "Hindi",
+        "Science",
+        "Social Studies"
+    ],
+
+    "6": [
+        "English",
+        "Math",
+        "Hindi",
+        "Science",
+        "Social Studies"
+    ]
+
+};
