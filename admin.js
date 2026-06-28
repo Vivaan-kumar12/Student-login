@@ -208,3 +208,18 @@ if (tableBody) {
     });
 
 }
+
+
+// ==========================
+// Edit Student
+// ==========================
+
+function editStudent(roll) {
+
+    localStorage.setItem("editRoll", roll);
+
+    window.location.href = "edit-student.html";
+
+}
+
+window.editStudent = editStudent;
