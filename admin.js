@@ -1,126 +1,94 @@
 import { db } from "./Firebase.js";
-
 import {
-doc,
-setDoc,
-getDoc
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+  doc,
+  setDoc,
+  getDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
+// ==========================
+// Default Admin Password
+// ==========================
 
 if (!localStorage.getItem("adminPassword")) {
-
-localStorage.setItem(
-"adminPassword",
-"12345"
-);
-
+    localStorage.setItem("adminPassword", "12345");
 }
 
 
+// ==========================
+// Admin Login
+// ==========================
 
 function adminLogin() {
 
-const username =
-document.getElementById("username");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
 
-const password =
-document.getElementById("password");
+    if (!username || !password) return;
 
-if (!username || !password) {
-return;
-}
+    if (
+        username.value.trim() === "admin" &&
+        password.value.trim() === localStorage.getItem("adminPassword")
+    ) {
 
-const user =
-username.value.trim();
+        sessionStorage.setItem("adminLoggedIn", "true");
 
-const pass =
-password.value.trim();
+        window.location.href = "dashboard.html";
 
-if (
-user === "admin" &&
-pass === localStorage.getItem("adminPassword")
-) {
+    } else {
 
-sessionStorage.setItem(
-"adminLoggedIn",
-"true"
-);
+        alert("Invalid Username or Password");
 
-window.location.href =
-"dashboard.html";
-
-}
-else{
-
-alert(
-"Invalid Username or Password"
-);
-
-}
+    }
 
 }
 
 window.adminLogin = adminLogin;
 
 
+// ==========================
+// Dashboard Security
+// ==========================
 
-const currentPage =
-window.location.pathname;
+const page = location.pathname;
 
 if (
+    page.includes("dashboard.html") ||
+    page.includes("students.html") ||
+    page.includes("edit-student.html") ||
+    page.includes("change-password.html")
+) {
 
-currentPage.includes("dashboard.html") ||
+    if (sessionStorage.getItem("adminLoggedIn") !== "true") {
 
-currentPage.includes("students.html") ||
+        window.location.replace("admin.html");
 
-currentPage.includes("edit-student.html") ||
-
-currentPage.includes("change-password.html")
-
-){
-
-if(
-
-sessionStorage.getItem("adminLoggedIn")
-!=="true"
-
-){
-
-window.location.replace(
-"admin.html"
-);
+    }
 
 }
 
-}
 
+// ==========================
+// Logout
+// ==========================
 
 function adminLogout() {
 
-    alert("Logout Clicked");
+    if (confirm("Logout?")) {
 
-    sessionStorage.removeItem("adminLoggedIn");
+        sessionStorage.clear();
 
-    window.location.href = "admin.html";
-}
-
-window.adminLogout = adminLogout;
-
-window.adminLogout = adminLogout;
-const logoutBtn = document.getElementById("logoutBtn");
-
-function adminLogout() {
-
-    if (confirm("Are you sure you want to logout?")) {
-
-        sessionStorage.removeItem("adminLoggedIn");
-
-        window.location.href = "admin.html";
+        window.location.replace("admin.html");
 
     }
 
 }
 
 window.adminLogout = adminLogout;
+
+
+// ==========================
+// Console Test
+// ==========================
+
+console.log("admin.js Loaded Successfully");
