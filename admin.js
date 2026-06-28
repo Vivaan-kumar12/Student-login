@@ -282,3 +282,26 @@ const classSubjects = {
     ]
 
 };
+
+
+// ==========================
+// Load Student
+// ==========================
+
+const editRoll = localStorage.getItem("editRoll");
+
+if (window.location.pathname.includes("edit-student.html")) {
+
+    const student = studentList.find(s => s.roll === editRoll);
+
+    if (student) {
+
+        document.getElementById("studentName").value = student.name;
+
+        document.getElementById("fatherName").value = student.father;
+
+        document.getElementById("attendance").value = student.attendance;
+
+    }
+
+}
