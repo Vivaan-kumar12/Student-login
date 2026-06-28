@@ -97,27 +97,16 @@ window.location.replace(
 }
 
 
-function adminLogout(){
+function adminLogout() {
 
-if(
+    alert("Logout Clicked");
 
-confirm(
-"Are you sure you want to logout?"
-)
+    sessionStorage.removeItem("adminLoggedIn");
 
-){
-
-sessionStorage.removeItem(
-"adminLoggedIn"
-);
-
-window.location.replace(
-"admin.html"
-);
-
+    window.location.href = "admin.html";
 }
 
-}
+window.adminLogout = adminLogout;
 
 window.adminLogout = adminLogout;
 const logoutBtn = document.getElementById("logoutBtn");
