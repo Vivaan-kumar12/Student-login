@@ -68,12 +68,12 @@ const students = {
     attendance: "89%",
     results: {
 		"June 2026": [
-      ["English", 50, 17, 38],
-      ["Math", 50, 17, 40],
-      ["Hindi", 50, 17, 39],
-      ["Science", 50, 17, 41],
+      ["English", 50, 17, 23],
+      ["Math", 50, 17, 30],
+      ["Hindi", 50, 17, 29],
+      ["Science", 50, 17, 21],
       ["Social Studies", 50, 17, 25],
-      ["Computer", 50, 17, 44]
+      ["Computer", 50, 17, 34]
         ]
      }
   },
