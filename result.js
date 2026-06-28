@@ -72,7 +72,7 @@ const students = {
       ["Math", 50, 17, 40],
       ["Hindi", 50, 17, 39],
       ["Science", 50, 17, 41],
-      ["Social Studies", 50, 17, 42],
+      ["Social Studies", 50, 17, 25],
       ["Computer", 50, 17, 44]
         ]
      }
