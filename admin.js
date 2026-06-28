@@ -305,3 +305,41 @@ if (window.location.pathname.includes("edit-student.html")) {
     }
 
 }
+
+// ==========================
+// Load Months
+// ==========================
+
+function loadMonths() {
+
+    const month = document.getElementById("month");
+
+    if (!month) return;
+
+    month.innerHTML = "";
+
+    const months = [
+        "June 2026",
+        "July 2026",
+        "August 2026",
+        "September 2026",
+        "October 2026",
+        "November 2026",
+        "December 2026"
+    ];
+
+    months.forEach(item => {
+
+        const option = document.createElement("option");
+
+        option.value = item;
+
+        option.textContent = item;
+
+        month.appendChild(option);
+
+    });
+
+}
+
+window.loadMonths = loadMonths;
