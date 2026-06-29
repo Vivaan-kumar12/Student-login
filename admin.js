@@ -351,3 +351,70 @@ function loadMonths() {
 }
 
 window.loadMonths = loadMonths;
+
+// ==========================
+// Load Subject Marks
+// ==========================
+
+const marksEditor = document.getElementById("marksEditor");
+
+if (
+    marksEditor &&
+    window.location.pathname.includes("edit-student.html")
+) {
+
+    const student = studentList.find(
+        s => s.roll === editRoll
+    );
+
+    if (student) {
+
+        const subjects = classSubjects[student.class];
+
+        marksEditor.innerHTML = "";
+
+        subjects.forEach(subject => {
+
+            const maxMarks =
+                student.class === "1" ||
+                student.class === "2" ||
+                student.class === "3"
+                ? 50
+                : 60;
+
+            const passMarks =
+                student.class === "1" ||
+                student.class === "2" ||
+                student.class === "3"
+                ? 17
+                : 20;
+
+            marksEditor.innerHTML += `
+                <div class="subject-row">
+
+                    <label>
+                        ${subject}
+                        <br>
+                        <small>
+                            Max : ${maxMarks}
+                            &nbsp;&nbsp;
+                            Pass : ${passMarks}
+                        </small>
+                    </label>
+
+                    <input
+                        type="number"
+                        min="0"
+                        max="${maxMarks}"
+                        value="0"
+                        oninput="calculatePreview()"
+                    >
+
+                </div>
+            `;
+
+        });
+
+    }
+
+}
