@@ -354,68 +354,36 @@ window.loadMonths = loadMonths;
 // Load Subject Marks
 // ==========================
 
-const marksEditor = document.getElementById("marksEditor");
+marksEditor.innerHTML += `
 
-if (
-    marksEditor &&
-    window.location.pathname.includes("edit-student.html")
-) {
+<div class="subject-row">
 
-   alert(typeof studentList);
-alert(editRoll);
-alert(typeof classSubjects);
-  const student = studentList.find(
-        s => s.roll === editRoll
-    );
+<label>
 
-    if (student) {
+${subject}
+<br>
 
-        const subjects = classSubjects[student.class];
+<small>
 
-        marksEditor.innerHTML = "";
+Max : ${maxMarks}
+&nbsp;&nbsp;
 
-        subjects.forEach(subject => {
+Pass : ${passMarks}
 
-            const maxMarks =
-                student.class === "1" ||
-                student.class === "2" ||
-                student.class === "3"
-                ? 50
-                : 60;
+</small>
 
-            const passMarks =
-                student.class === "1" ||
-                student.class === "2" ||
-                student.class === "3"
-                ? 17
-                : 20;
+</label>
 
-            marksEditor.innerHTML += `
-                <div class="subject-row">
+<input
+type="number"
+id="mark_${subject.replace(/\s+/g,'_')}"
+data-subject="${subject}"
+min="0"
+max="${maxMarks}"
+value="0"
+oninput="validateMarks(this);calculatePreview()"
+placeholder="Marks">
 
-                    <label>
-                        ${subject}
-                        <br>
-                        <small>
-                            Max : ${maxMarks}
-                            &nbsp;&nbsp;
-                            Pass : ${passMarks}
-                        </small>
-                    </label>
+</div>
 
-                    <input
-                        type="number"
-                        min="0"
-                        max="${maxMarks}"
-                        value="0"
-                        oninput="calculatePreview()"
-                    >
-
-                </div>
-            `;
-
-        });
-
-    }
-
-}
+`;
