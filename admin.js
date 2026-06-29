@@ -363,7 +363,10 @@ if (
     window.location.pathname.includes("edit-student.html")
 ) {
 
-    const student = studentList.find(
+   alert(typeof studentList);
+alert(editRoll);
+alert(typeof classSubjects);
+  const student = studentList.find(
         s => s.roll === editRoll
     );
 
