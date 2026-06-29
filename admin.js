@@ -1,9 +1,11 @@
 import { db } from "./Firebase.js";
-
 import {
   doc,
-  setDoc
+  setDoc,
+  getDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+alert("admin.js Loaded");
+
 
 // ==========================
 // Default Admin Password
@@ -354,36 +356,68 @@ window.loadMonths = loadMonths;
 // Load Subject Marks
 // ==========================
 
-marksEditor.innerHTML += `
+const marksEditor = document.getElementById("marksEditor");
 
-<div class="subject-row">
+if (
+    marksEditor &&
+    window.location.pathname.includes("edit-student.html")
+) {
 
-<label>
+   alert(typeof studentList);
+alert(editRoll);
+alert(typeof classSubjects);
+  const student = studentList.find(
+        s => s.roll === editRoll
+    );
 
-${subject}
-<br>
+    if (student) {
 
-<small>
+        const subjects = classSubjects[student.class];
 
-Max : ${maxMarks}
-&nbsp;&nbsp;
+        marksEditor.innerHTML = "";
 
-Pass : ${passMarks}
+        subjects.forEach(subject => {
 
-</small>
+            const maxMarks =
+                student.class === "1" ||
+                student.class === "2" ||
+                student.class === "3"
+                ? 50
+                : 60;
 
-</label>
+            const passMarks =
+                student.class === "1" ||
+                student.class === "2" ||
+                student.class === "3"
+                ? 17
+                : 20;
 
-<input
-type="number"
-id="mark_${subject.replace(/\s+/g,'_')}"
-data-subject="${subject}"
-min="0"
-max="${maxMarks}"
-value="0"
-oninput="validateMarks(this);calculatePreview()"
-placeholder="Marks">
+            marksEditor.innerHTML += `
+                <div class="subject-row">
 
-</div>
+                    <label>
+                        ${subject}
+                        <br>
+                        <small>
+                            Max : ${maxMarks}
+                            &nbsp;&nbsp;
+                            Pass : ${passMarks}
+                        </small>
+                    </label>
 
-`;
+                    <input
+                        type="number"
+                        min="0"
+                        max="${maxMarks}"
+                        value="0"
+                        oninput="calculatePreview()"
+                    >
+
+                </div>
+            `;
+
+        });
+
+    }
+
+}
