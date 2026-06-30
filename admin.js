@@ -439,12 +439,17 @@ async function saveStudent() {
 
     try {
 
-        await setDoc(
+      console.log("Roll =", roll);
+console.log(studentData);
+alert("Saving document: " + roll); 
+      await setDoc(
             doc(db, "students", roll),
             studentData,
             { merge: true }
         );
+const checkDoc = await getDoc(doc(db, "students", roll));
 
+alert(JSON.stringify(checkDoc.data()));
         alert("Student data saved successfully.");
 
     } catch (error) {
