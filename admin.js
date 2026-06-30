@@ -449,8 +449,10 @@ async function saveStudent() {
 
     } catch (error) {
 
-        console.error(error);
-        alert("Error saving data.");
+    alert(error.message);
+    console.error(error);
+
+}
 
     }
 
