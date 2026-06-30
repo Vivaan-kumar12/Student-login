@@ -465,16 +465,3 @@ alert(JSON.stringify(checkDoc.data()));
 
 window.saveStudent = saveStudent;
 
-const inputs = document.querySelectorAll("#marksEditor input");
-
-const subjects = classSubjects[
-    studentList.find(s => s.roll === roll).class
-];
-
-const marks = {};
-
-inputs.forEach((input, index) => {
-
-    marks[subjects[index]] = Number(input.value);
-
-});
