@@ -421,3 +421,39 @@ alert(typeof classSubjects);
     }
 
 }
+
+async function saveStudent() {
+
+    const roll = localStorage.getItem("editRoll");
+
+    const studentData = {
+
+        name: document.getElementById("studentName").value,
+        father: document.getElementById("fatherName").value,
+        class: studentList.find(s => s.roll === roll).class,
+        attendance: document.getElementById("attendance").value,
+        month: document.getElementById("month").value,
+        publishStatus: document.getElementById("publishStatus").value
+
+    };
+
+    try {
+
+        await setDoc(
+            doc(db, "students", roll),
+            studentData,
+            { merge: true }
+        );
+
+        alert("Student data saved successfully.");
+
+    } catch (error) {
+
+        console.error(error);
+        alert("Error saving data.");
+
+    }
+
+}
+
+window.saveStudent = saveStudent;
