@@ -35,54 +35,6 @@ for(let year=2026; year<=2027; year++){
     }
 }
 
-const students = [
-
-{
-name:"Shreya Kumari",
-roll:"304"
-},
-
-{
-name:"Shristi Singh",
-roll:"313"
-},
-
-{
-name:"Akansha Singh",
-roll:"310"
-},
-
-{
-name:"Shreyansh Singh",
-roll:"312"
-},
-
-{
-name:"Advik Singh",
-roll:"306"
-},
-
-{
-name:"Aarnav Singh",
-roll:"315"
-},
-
-{
-name:"Sonali Singh",
-roll:"309"
-},
-
-{
-name:"Ayush Kumar",
-roll:"311"
-},
-
-{
-name:"Anshika Singh",
-roll:"314"
-}
-
-];
 
 async function loginStudent(){
 
