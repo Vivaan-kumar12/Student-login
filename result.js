@@ -167,13 +167,6 @@ const students = {
   },
 }
 
-// Get Login Data
-
-const roll = localStorage.getItem("studentRoll");
-const month = localStorage.getItem("selectedMonth");
-console.log("Selected Month =", month);
-
-const student = students[roll];
 
 // Get Login Data
 
