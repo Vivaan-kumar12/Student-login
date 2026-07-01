@@ -4,11 +4,11 @@ import {
   doc,
   setDoc,
   getDoc,
+  deleteDoc,
   collection,
   getDocs
-}
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-alert("admin.js Loaded");
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
 // ==========================
 // Default Admin Password
 // ==========================
