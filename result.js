@@ -241,7 +241,10 @@ console.log(student.results);
 const selectedResult = student.results[month];
 console.log(selectedResult);
 
-if (!selectedResult) {
+const resultRef = doc(db, "students", roll, "results", month);
+const resultSnap = await getDoc(resultRef);
+
+if (!resultSnap.exists()) {
 
 document.body.innerHTML = `
 <div style="
@@ -257,6 +260,23 @@ font-family:Arial;
 throw new Error("Result Not Uploaded");
 }
 
+const data = resultSnap.data();
+
+const selectedResult = [
+
+["English",50,17,data.English || 0],
+
+["Math",50,17,data.Math || 0],
+
+["Hindi",50,17,data.Hindi || 0],
+
+["Science",50,17,data.Science || 0],
+
+["Social Studies",50,17,data.SocialStudies || 0],
+
+["Computer",50,17,data.Computer || 0]
+
+];
 // Profile Section
 
 document.getElementById("studentName").textContent = student.name;
