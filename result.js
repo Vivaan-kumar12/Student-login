@@ -44,42 +44,18 @@ Object.assign(student, studentSnap.data());
 
 const publishStatus =
     student.publishStatus || "published";
-{
 
-document.body.innerHTML=`
+if (publishStatus === "unpublished") {
 
-<div style="
+    document.body.innerHTML = `
+    <div style="text-align:center;padding:80px;font-family:Arial;">
+        <h1>Result Not Published Yet</h1>
+        <p>Please contact your Examiner.</p>
+    </div>
+    `;
 
-text-align:center;
-
-padding:80px;
-
-font-family:Arial;
-
-">
-
-<h1>
-
-Result Not Published Yet
-
-</h1>
-
-<p>
-
-Please contact your Examiner.
-
-</p>
-
-</div>
-
-`;
-
-throw new Error(
-"Result Hidden"
-);
-
+    throw new Error("Result Hidden");
 }
-
 if (!student) {
     alert("Student data not found");
     window.location.href = "index.html";
