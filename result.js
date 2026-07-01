@@ -24,7 +24,7 @@ const students = {
     father: "Pankaj Kumar",
     attendance: "95%",
     results: {
-	     		"July 2026": [
+	     		"June 2026": [
       ["English", 50, 17, 45],
       ["Math", 50, 17, 43],
       ["Hindi", 50, 17, 42],
