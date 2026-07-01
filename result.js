@@ -117,7 +117,7 @@ document.getElementById("studentName").textContent = student.name;
 document.getElementById("studentRoll").textContent = roll;
 
 document.getElementById("studentClass").textContent =
-    student.class + " - A";
+    student.class;
 
 document.getElementById("fatherName").textContent =
   student.father;
