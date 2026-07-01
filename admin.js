@@ -226,8 +226,39 @@ const classSubjects = {
 // ==========================
 // Load Student 
 // ==========================
+const editRoll = localStorage.getItem("editRoll");
+if (window.location.pathname.includes("edit-student.html")) {
 
+    const studentRef = doc(db, "students", editRoll);
 
+    const studentSnap = await getDoc(studentRef);
+
+    if (studentSnap.exists()) {
+
+        const student = studentSnap.data();
+
+        localStorage.setItem("studentClass", student.class);
+
+        document.getElementById("studentName").value = student.name;
+        document.getElementById("fatherName").value = student.father;
+        document.getElementById("attendance").value = student.attendance;
+
+        loadMonths();
+
+        const monthSelect = document.getElementById("month");
+        monthSelect.value = "June 2026";
+
+        loadSubjects(student);
+
+        loadMarksFromFirestore(editRoll, monthSelect.value);
+
+        monthSelect.addEventListener("change", function () {
+            loadMarksFromFirestore(editRoll, this.value);
+        });
+
+    }
+
+}
 
 // ==========================
 // Load Months
