@@ -82,7 +82,7 @@ roll:"314"
 
 ];
 
-function loginStudent(){
+async function loginStudent(){
 
     const name =
     document.getElementById("studentName")
@@ -123,14 +123,29 @@ function loginStudent(){
         student.roll===roll
     );
 
-    if(!studentFound){
+    const studentRef = doc(db, "students", roll);
 
-        alert(
-        "Invalid Student Name or Roll Number"
-        );
+const studentSnap = await getDoc(studentRef);
 
-        return;
-    }
+if (!studentSnap.exists()) {
+    alert("Invalid Roll Number");
+    return;
+}
+
+const studentData = studentSnap.data();
+
+if (
+    studentData.name.toLowerCase() !==
+    name.toLowerCase()
+) {
+    alert("Student Name does not match Roll Number");
+    return;
+}
+
+if (studentData.publishStatus === "unpublished") {
+    alert("Result is not published yet.");
+    return;
+}
 
     localStorage.setItem(
         "studentName",
