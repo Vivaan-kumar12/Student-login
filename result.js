@@ -2,9 +2,7 @@ alert("Result JS Started");
 import { db } from "./Firebase.js";
 import {
   doc,
-  getDoc,
-  collection,
-  getDocs
+  getDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 if(sessionStorage.getItem("loggedIn") !== "true"){
