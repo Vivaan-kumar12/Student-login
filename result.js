@@ -279,7 +279,7 @@ const selectedResult = [
 
 ["Science",50,17,data.Science || 0],
 
-["Social Studies",50,17,data.Social Studies || 0],
+["Social Studies", 50, 17, data["Social Studies"] || 0],
 
 ["Computer",50,17,data.Computer || 0]
 
