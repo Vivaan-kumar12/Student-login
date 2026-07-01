@@ -289,7 +289,7 @@ const classSubjects = {
 
 
 // ==========================
-// Load Student
+// Load Student 
 // ==========================
 
 const editRoll = localStorage.getItem("editRoll");
@@ -300,19 +300,31 @@ if (window.location.pathname.includes("edit-student.html")) {
 
     if (student) {
 
+        // Fill basic details
         document.getElementById("studentName").value = student.name;
-
         document.getElementById("fatherName").value = student.father;
-
         document.getElementById("attendance").value = student.attendance;
-      loadMonths();
 
-        document.getElementById("month").value = "June 2026";
+        // Load months
+        loadMonths();
+
+        // Default month
+        const monthSelect = document.getElementById("month");
+        monthSelect.value = "June 2026";
+
+        // Load subjects first
+        loadSubjects(student);
+
+        // Then load marks from Firestore
+        loadMarksFromFirestore(editRoll, monthSelect.value);
+
+        // When month changes → reload marks
+        monthSelect.addEventListener("change", function () {
+            loadMarksFromFirestore(editRoll, this.value);
+        });
 
     }
-
 }
-
 
 // ==========================
 // Load Months
