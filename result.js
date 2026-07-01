@@ -189,8 +189,9 @@ if (studentSnap.exists()) {
 }
 
 const publishStatus =
-localStorage.getItem("publishStatus");
-
+studentSnap.exists()
+    ? studentSnap.data().publishStatus
+    : "published";
 if(
 publishStatus==="unpublished"
 ){
