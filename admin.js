@@ -492,3 +492,56 @@ function searchStudent() {
 
 window.searchStudent = searchStudent;
 
+async function addStudent() {
+
+    const roll = document.getElementById("roll").value.trim();
+
+    const name = document.getElementById("studentName").value.trim();
+
+    const father = document.getElementById("fatherName").value.trim();
+
+    const studentClass = document.getElementById("studentClass").value;
+
+    const attendance = document.getElementById("attendance").value.trim();
+
+    if (!roll || !name || !father || !studentClass || !attendance) {
+
+        alert("Please fill all fields.");
+
+        return;
+
+    }
+
+    const studentRef = doc(db, "students", roll);
+
+    const studentSnap = await getDoc(studentRef);
+
+    if (studentSnap.exists()) {
+
+        alert("Roll Number already exists.");
+
+        return;
+
+    }
+
+    await setDoc(studentRef, {
+
+        name: name,
+
+        father: father,
+
+        class: studentClass,
+
+        attendance: attendance,
+
+        publishStatus: "unpublished"
+
+    });
+
+    alert("Student Added Successfully");
+
+    window.location.href = "students.html";
+
+}
+
+window.addStudent = addStudent;
