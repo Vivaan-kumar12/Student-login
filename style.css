@@ -806,3 +806,68 @@ left:170%;
 }
 
 }
+
+.login-box::after{
+
+content:"";
+
+position:absolute;
+
+top:-2px;
+
+left:-2px;
+
+right:-2px;
+
+bottom:-2px;
+
+border-radius:22px;
+
+padding:2px;
+
+background:linear-gradient(
+45deg,
+#38bdf8,
+#7c3aed,
+#06b6d4,
+#2563eb,
+#38bdf8
+);
+
+background-size:300% 300%;
+
+animation:borderGlow 6s linear infinite;
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+}
+
+@keyframes borderGlow{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
