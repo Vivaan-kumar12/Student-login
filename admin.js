@@ -448,6 +448,31 @@ async function saveStudent() {
         studentData,
         { merge: true }
     );
+      const month = document.getElementById("month").value;
+
+const inputs = document.querySelectorAll("#marksEditor input");
+
+const resultData = {};
+
+const labels = document.querySelectorAll("#marksEditor label");
+
+labels.forEach((label, index) => {
+
+    const subject =
+        label.childNodes[0].textContent.trim();
+
+    resultData[subject] =
+        Number(inputs[index].value);
+
+});
+
+await setDoc(
+
+    doc(db, "students", roll, "results", month),
+
+    resultData
+
+);
 
     const checkDoc = await getDoc(doc(db, "students", roll));
 
