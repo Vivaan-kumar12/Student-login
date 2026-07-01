@@ -175,6 +175,26 @@ console.log("Selected Month =", month);
 
 const student = students[roll];
 
+// Get Login Data
+
+const roll = localStorage.getItem("studentRoll");
+const month = localStorage.getItem("selectedMonth");
+console.log("Selected Month =", month);
+
+const student = students[roll];
+
+const studentRef = doc(db, "students", roll);
+const studentSnap = await getDoc(studentRef);
+
+if (studentSnap.exists()) {
+
+    const firestoreData = studentSnap.data();
+
+    student.attendance =
+        firestoreData.attendance || student.attendance;
+
+}
+
 const publishStatus =
 localStorage.getItem("publishStatus");
 
