@@ -43,12 +43,8 @@ if (!studentSnap.exists()) {
 Object.assign(student, studentSnap.data());
 
 const publishStatus =
-studentSnap.exists()
-    ? studentSnap.data().publishStatus
-    : "published";
-if(
-publishStatus==="unpublished"
-){
+    student.publishStatus || "published";
+{
 
 document.body.innerHTML=`
 
@@ -143,7 +139,7 @@ const selectedResult = subjects.map(subject => [
 document.getElementById("studentName").textContent = student.name;
 
 document.getElementById("studentRoll").textContent =
-  "Class " + student.class + " - A";
+    "Roll No: " + roll + " | Class " + student.class;
 
 document.getElementById("fatherName").textContent =
   student.father;
