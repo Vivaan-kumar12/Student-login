@@ -363,24 +363,77 @@ function loadMonths() {
 }
 
 window.loadMonths = loadMonths;
+function loadSubjects(student) {
 
-// ==========================
-// Load Subject Marks
-// ==========================
+    const marksEditor = document.getElementById("marksEditor");
 
-const month = document.getElementById("month").value;
+    if (!marksEditor) return;
 
-const resultRef = doc(db, "students", editRoll, "results", month);
+    const subjects = classSubjects[student.class];
 
-const resultSnap = await getDoc(resultRef);
+    marksEditor.innerHTML = "";
 
-if (resultSnap.exists()) {
+    subjects.forEach(subject => {
+
+        const maxMarks =
+            student.class === "1" ||
+            student.class === "2" ||
+            student.class === "3"
+            ? 50
+            : 60;
+
+        const passMarks =
+            student.class === "1" ||
+            student.class === "2" ||
+            student.class === "3"
+            ? 17
+            : 20;
+
+        marksEditor.innerHTML += `
+        <div class="subject-row">
+
+            <label>
+                ${subject}
+                <br>
+                <small>
+                    Max : ${maxMarks}
+                    &nbsp;&nbsp;
+                    Pass : ${passMarks}
+                </small>
+            </label>
+
+            <input
+                type="number"
+                min="0"
+                max="${maxMarks}"
+                value="0">
+
+        </div>
+        `;
+    });
+
+}
+
+async function loadMarksFromFirestore(roll, month) {
+
+    const resultRef = doc(db, "students", roll, "results", month);
+
+    const resultSnap = await getDoc(resultRef);
+
+    if (!resultSnap.exists()) return;
 
     const data = resultSnap.data();
 
-    const inputs = document.querySelectorAll("#marksEditor input");
+    const inputs =
+        document.querySelectorAll("#marksEditor input");
 
-    subjects.forEach((subject, index) => {
+    const labels =
+        document.querySelectorAll("#marksEditor label");
+
+    labels.forEach((label, index) => {
+
+        const subject =
+            label.childNodes[0].textContent.trim();
 
         if (data[subject] !== undefined) {
 
@@ -391,6 +444,7 @@ if (resultSnap.exists()) {
     });
 
 }
+
 async function saveStudent() {
 
     const roll = localStorage.getItem("editRoll");
@@ -434,6 +488,7 @@ labels.forEach((label, index) => {
         Number(inputs[index].value);
 
 });
+      console.log(resultData);
 
 await setDoc(
 
