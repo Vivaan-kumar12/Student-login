@@ -36,19 +36,41 @@
     Welcome Back
 </p>
 
-        <input
-            type="text"
-            id="studentName"
-            placeholder="Username">
+        <div class="input-box">
 
-        <input
-            type="number"
-            id="rollNumber"
-            placeholder="Password">
+<span>👤</span>
 
-        <select id="monthYear">
-            <option value="">Select Month & Year</option>
-        </select>
+<input
+type="text"
+id="studentName"
+placeholder="Username">
+
+        </div>
+
+        <div class="input-box">
+
+<span>🔒</span>
+
+<input
+type="number"
+id="rollNumber"
+placeholder="Password">
+
+        </div>
+
+        <div class="input-box">
+
+<span>📅</span>
+
+<select id="monthYear">
+
+<option value="">
+Select Month & Year
+</option>
+
+</select>
+
+        </div>
 
         <button onclick="loginStudent()">
             Login
