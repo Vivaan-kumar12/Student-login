@@ -687,3 +687,68 @@ background:linear-gradient(90deg,#ffffff,#7dd3fc);
 margin-bottom:8px;
 
     }
+
+.logo-circle{
+
+width:95px;
+
+height:95px;
+
+margin:0 auto 20px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:46px;
+
+border-radius:50%;
+
+background:linear-gradient(
+145deg,
+rgba(255,255,255,.20),
+rgba(255,255,255,.08)
+);
+
+border:1px solid rgba(255,255,255,.35);
+
+box-shadow:
+0 0 20px rgba(0,170,255,.45),
+0 0 50px rgba(0,170,255,.15);
+
+animation:logoFloat 3s ease-in-out infinite;
+}
+
+.subtitle{
+
+text-align:center;
+
+margin-bottom:22px;
+
+font-size:15px;
+
+letter-spacing:1.5px;
+
+color:#dbeafe;
+
+opacity:.9;
+
+}
+
+@keyframes logoFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}
