@@ -114,8 +114,10 @@ const selectedResult = subjects.map(subject => [
 
 document.getElementById("studentName").textContent = student.name;
 
-document.getElementById("studentRoll").textContent =
-    "Roll No: " + roll + " | Class " + student.class;
+document.getElementById("studentRoll").textContent = roll;
+
+document.getElementById("studentClass").textContent =
+    student.class + " - A";
 
 document.getElementById("fatherName").textContent =
   student.father;
