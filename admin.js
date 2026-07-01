@@ -136,11 +136,15 @@ async function loadStudentTable() {
 
             <td>
 
-                <button onclick="editStudent('${docSnap.id}')">
-                    Edit
-                </button>
+    <button onclick="editStudent('${docSnap.id}')">
+        Edit
+    </button>
 
-            </td>
+    <button onclick="deleteStudent('${docSnap.id}')">
+        Delete
+    </button>
+
+</td>
 
         </tr>
         `;
