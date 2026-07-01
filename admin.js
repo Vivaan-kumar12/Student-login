@@ -301,13 +301,13 @@ const classSubjects = {
 // Load Student 
 // ==========================
 
-const editRoll = localStorage.getItem("editRoll");
+const studentRef = doc(db, "students", editRoll);
 
-if (window.location.pathname.includes("edit-student.html")) {
+const studentSnap = await getDoc(studentRef);
 
-    const student = studentList.find(s => s.roll === editRoll);
+if (studentSnap.exists()) {
 
-    if (student) {
+    const student = studentSnap.data();
 
         // Fill basic details
         document.getElementById("studentName").value = student.name;
@@ -462,7 +462,7 @@ async function saveStudent() {
 
         name: document.getElementById("studentName").value,
         father: document.getElementById("fatherName").value,
-        class: studentList.find(s => s.roll === roll).class,
+        class: document.getElementById("studentClass").value,
         attendance: document.getElementById("attendance").value,
         month: document.getElementById("month").value,
         publishStatus: document.getElementById("publishStatus").value
