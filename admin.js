@@ -308,7 +308,7 @@ const studentSnap = await getDoc(studentRef);
 if (studentSnap.exists()) {
 
     const student = studentSnap.data();
-
+localStorage.setItem("studentClass", student.class);
         // Fill basic details
         document.getElementById("studentName").value = student.name;
         document.getElementById("fatherName").value = student.father;
@@ -462,7 +462,7 @@ async function saveStudent() {
 
         name: document.getElementById("studentName").value,
         father: document.getElementById("fatherName").value,
-        class: document.getElementById("studentClass").value,
+        class: localStorage.getItem("studentClass"),
         attendance: document.getElementById("attendance").value,
         month: document.getElementById("month").value,
         publishStatus: document.getElementById("publishStatus").value
