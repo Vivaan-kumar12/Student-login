@@ -439,29 +439,29 @@ async function saveStudent() {
 
     try {
 
-      console.log("Roll =", roll);
-console.log(studentData);
-alert("Saving document: " + roll); 
-      await setDoc(
-            doc(db, "students", roll),
-            studentData,
-            { merge: true }
-        );
-const checkDoc = await getDoc(doc(db, "students", roll));
+    console.log("Roll =", roll);
+    console.log(studentData);
+    alert("Saving document: " + roll);
 
-alert(JSON.stringify(checkDoc.data()));
-        alert("Student data saved successfully.");
+    await setDoc(
+        doc(db, "students", roll),
+        studentData,
+        { merge: true }
+    );
 
-    } catch (error) {
+    const checkDoc = await getDoc(doc(db, "students", roll));
+
+    alert(JSON.stringify(checkDoc.data()));
+
+    alert("Student data saved successfully.");
+
+} catch (error) {
 
     alert(error.message);
     console.error(error);
 
 }
 
-    }
-
 }
 
 window.saveStudent = saveStudent;
-
