@@ -27,50 +27,21 @@
 
     <div class="login-box">
 
-        <div class="logo-circle">
-    🎓
+        <h1>Student Login</h1>
 
-<h1>Student Login</h1>
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Username">
 
-<p class="subtitle">
-    Welcome Back
-</p>
+        <input
+            type="number"
+            id="rollNumber"
+            placeholder="Password">
 
-        <div class="input-box">
-
-<span>👤</span>
-
-<input
-type="text"
-id="studentName"
-placeholder="Username">
-
-        </div>
-
-        <div class="input-box">
-
-<span>🔒</span>
-
-<input
-type="number"
-id="rollNumber"
-placeholder="Password">
-
-        </div>
-
-        <div class="input-box">
-
-<span>📅</span>
-
-<select id="monthYear">
-
-<option value="">
-Select Month & Year
-</option>
-
-</select>
-
-        </div>
+        <select id="monthYear">
+            <option value="">Select Month & Year</option>
+        </select>
 
         <button onclick="loginStudent()">
             Login
