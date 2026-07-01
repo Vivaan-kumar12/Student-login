@@ -227,39 +227,7 @@ const classSubjects = {
 // Load Student 
 // ==========================
 
-const studentRef = doc(db, "students", editRoll);
 
-const studentSnap = await getDoc(studentRef);
-
-if (studentSnap.exists()) {
-
-    const student = studentSnap.data();
-localStorage.setItem("studentClass", student.class);
-        // Fill basic details
-        document.getElementById("studentName").value = student.name;
-        document.getElementById("fatherName").value = student.father;
-        document.getElementById("attendance").value = student.attendance;
-
-        // Load months
-        loadMonths();
-
-        // Default month
-        const monthSelect = document.getElementById("month");
-        monthSelect.value = "June 2026";
-
-        // Load subjects first
-        loadSubjects(student);
-
-        // Then load marks from Firestore
-        loadMarksFromFirestore(editRoll, monthSelect.value);
-
-        // When month changes → reload marks
-        monthSelect.addEventListener("change", function () {
-            loadMarksFromFirestore(editRoll, this.value);
-        });
-
-    }
-}
 
 // ==========================
 // Load Months
