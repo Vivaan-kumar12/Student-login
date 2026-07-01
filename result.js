@@ -1,4 +1,5 @@
 alert("Result JS Started");
+import { db } from "./Firebase.js";
 import {
   doc,
   getDoc,
@@ -238,8 +239,7 @@ if (!student) {
 console.log(student);
 console.log(month);
 console.log(student.results);
-const selectedResult = student.results[month];
-console.log(selectedResult);
+
 
 const resultRef = doc(db, "students", roll, "results", month);
 const resultSnap = await getDoc(resultRef);
