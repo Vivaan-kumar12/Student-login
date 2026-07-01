@@ -115,21 +115,29 @@ throw new Error("Result Not Uploaded");
 
 const data = resultSnap.data();
 console.log(data);
-const selectedResult = [
+const classSubjects = {
+    "1": ["English", "Math", "Hindi", "Science", "Social Studies", "Computer"],
+    "2": ["English", "Math", "Hindi", "Science", "Social Studies", "Computer"],
+    "3": ["English", "Math", "Hindi", "Science", "Social Studies", "Computer"],
+    "4": ["English", "Math", "Hindi", "Science", "Social Studies"],
+    "5": ["English", "Math", "Hindi", "Science", "Social Studies"],
+    "6": ["English", "Math", "Hindi", "Science", "Social Studies"]
+};
 
-["English",50,17,data.English || 0],
+const subjects = classSubjects[student.class];
 
-["Math",50,17,data.Math || 0],
+const maxMarks =
+    ["1", "2", "3"].includes(student.class) ? 50 : 60;
 
-["Hindi",50,17,data.Hindi || 0],
+const passMarks =
+    ["1", "2", "3"].includes(student.class) ? 17 : 20;
 
-["Science",50,17,data.Science || 0],
-
-["Social Studies", 50, 17, data["Social Studies"] || 0],
-
-["Computer",50,17,data.Computer || 0]
-
-];
+const selectedResult = subjects.map(subject => [
+    subject,
+    maxMarks,
+    passMarks,
+    data[subject] || 0
+]);
 // Profile Section
 
 document.getElementById("studentName").textContent = student.name;
