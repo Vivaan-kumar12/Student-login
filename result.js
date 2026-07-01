@@ -268,7 +268,8 @@ throw new Error("Result Not Uploaded");
 }
 
 const data = resultSnap.data();
-
+console.log(data);
+console.log(data.Social Studies);
 const selectedResult = [
 
 ["English",50,17,data.English || 0],
