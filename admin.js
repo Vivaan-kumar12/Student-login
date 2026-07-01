@@ -300,6 +300,9 @@ function loadMonths() {
 }
 
 window.loadMonths = loadMonths;
+if (window.location.pathname.includes("edit-student.html")) {
+    loadStudent();
+}
 function loadSubjects(student) {
 
     const marksEditor = document.getElementById("marksEditor");
