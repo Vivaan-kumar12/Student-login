@@ -150,6 +150,10 @@ transition:.35s;
     border:1px solid rgba(255,255,255,0.3);
 
     color:white;
+    
+    overflow:hidden;
+
+    position:relative;
 }
 
 .login-box:hover{
@@ -748,6 +752,56 @@ transform:translateY(0);
 50%{
 
 transform:translateY(-10px);
+
+}
+
+}
+
+.login-box::before{
+
+content:"";
+
+position:absolute;
+
+top:-150%;
+
+left:-60%;
+
+width:60%;
+
+height:300%;
+
+background:linear-gradient(
+
+to right,
+
+transparent,
+
+rgba(255,255,255,.28),
+
+transparent
+
+);
+
+transform:rotate(25deg);
+
+animation:glassShine 6s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes glassShine{
+
+0%{
+
+left:-80%;
+
+}
+
+100%{
+
+left:170%;
 
 }
 
