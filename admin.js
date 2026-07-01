@@ -490,3 +490,77 @@ function searchStudent() {
 }
 
 window.searchStudent = searchStudent;
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Student</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<h1>Add New Student</h1>
+
+<input
+type="text"
+id="roll"
+placeholder="Roll Number">
+
+<input
+type="text"
+id="studentName"
+placeholder="Student Name">
+
+<input
+type="text"
+id="fatherName"
+placeholder="Father Name">
+
+<select id="studentClass">
+
+<option value="">Select Class</option>
+
+<option value="1">Class 1</option>
+<option value="2">Class 2</option>
+<option value="3">Class 3</option>
+<option value="4">Class 4</option>
+<option value="5">Class 5</option>
+<option value="6">Class 6</option>
+
+</select>
+
+<input
+type="text"
+id="attendance"
+placeholder="Attendance (Example: 95%)">
+
+<br><br>
+
+<button onclick="addStudent()">
+Save Student
+</button>
+
+<br><br>
+
+<button onclick="window.location.href='dashboard.html'">
+⬅ Back
+</button>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+
+</html>
