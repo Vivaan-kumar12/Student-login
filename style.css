@@ -103,43 +103,8 @@ transform:translateY(-400px);
 }
 
 
-.login-box input{
 
-width:100%;
 
-padding:14px;
-
-margin-top:14px;
-
-border:none;
-
-outline:none;
-
-border-radius:12px;
-
-background:rgba(255,255,255,.12);
-
-color:#fff;
-
-font-size:15px;
-
-transition:.3s;
-
-}
-
-.login-box input::placeholder{
-
-color:#ddd;
-
-}
-
-.login-box input:focus{
-
-background:rgba(255,255,255,.18);
-
-box-shadow:0 0 15px #38bdf8;
-
-}
 
 .login-box button{
 
@@ -167,13 +132,6 @@ transition:.35s;
 
 }
 
-.login-box button:hover{
-
-transform:translateY(-3px);
-
-box-shadow:0 10px 30px rgba(56,189,248,.45);
-
-}
 
 .login-box{
 
@@ -215,25 +173,7 @@ box-shadow:
     margin-bottom:25px;
 }
 
-.login-box input,
-.login-box select{
 
-    width:100%;
-
-    margin-bottom:15px;
-
-    padding:14px;
-
-    padding-left:18px;
-
-    border:none;
-
-    border-radius:10px;
-
-    outline:none;
-
-    font-size:16px;
-}
 
 .login-box input:hover,
 .login-box select:hover{
