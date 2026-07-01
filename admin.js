@@ -182,12 +182,26 @@ const tableBody = document.getElementById("studentTable");
 
 if (tableBody) {
 
-    studentList.forEach(student => {
+    loadStudentTable();
+
+}
+
+async function loadStudentTable() {
+
+    tableBody.innerHTML = "";
+
+    const snapshot = await getDocs(
+        collection(db, "students")
+    );
+
+    snapshot.forEach((docSnap) => {
+
+        const student = docSnap.data();
 
         tableBody.innerHTML += `
         <tr>
 
-            <td>${student.roll}</td>
+            <td>${docSnap.id}</td>
 
             <td>${student.name}</td>
 
@@ -195,10 +209,8 @@ if (tableBody) {
 
             <td>
 
-                <button onclick="editStudent('${student.roll}')">
-
+                <button onclick="editStudent('${docSnap.id}')">
                     Edit
-
                 </button>
 
             </td>
