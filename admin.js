@@ -3,8 +3,11 @@ import { db } from "./Firebase.js";
 import {
   doc,
   setDoc,
-  getDoc
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+  getDoc,
+  collection,
+  getDocs
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 // ==========================
 // Default Admin Password
