@@ -356,72 +356,29 @@ window.loadMonths = loadMonths;
 // Load Subject Marks
 // ==========================
 
-const marksEditor = document.getElementById("marksEditor");
+const month = document.getElementById("month").value;
 
-if (
-    marksEditor &&
-    window.location.pathname.includes("edit-student.html")
-) {
+const resultRef = doc(db, "students", editRoll, "results", month);
 
-   alert(typeof studentList);
-alert(editRoll);
-alert(typeof classSubjects);
-  const student = studentList.find(
-        s => s.roll === editRoll
-    );
+const resultSnap = await getDoc(resultRef);
 
-    if (student) {
+if (resultSnap.exists()) {
 
-        const subjects = classSubjects[student.class];
+    const data = resultSnap.data();
 
-        marksEditor.innerHTML = "";
+    const inputs = document.querySelectorAll("#marksEditor input");
 
-        subjects.forEach(subject => {
+    subjects.forEach((subject, index) => {
 
-            const maxMarks =
-                student.class === "1" ||
-                student.class === "2" ||
-                student.class === "3"
-                ? 50
-                : 60;
+        if (data[subject] !== undefined) {
 
-            const passMarks =
-                student.class === "1" ||
-                student.class === "2" ||
-                student.class === "3"
-                ? 17
-                : 20;
+            inputs[index].value = data[subject];
 
-            marksEditor.innerHTML += `
-                <div class="subject-row">
+        }
 
-                    <label>
-                        ${subject}
-                        <br>
-                        <small>
-                            Max : ${maxMarks}
-                            &nbsp;&nbsp;
-                            Pass : ${passMarks}
-                        </small>
-                    </label>
-
-                    <input
-                        type="number"
-                        min="0"
-                        max="${maxMarks}"
-                        value="0"
-                        oninput="calculatePreview()"
-                    >
-
-                </div>
-            `;
-
-        });
-
-    }
+    });
 
 }
-
 async function saveStudent() {
 
     const roll = localStorage.getItem("editRoll");
