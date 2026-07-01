@@ -111,18 +111,6 @@ async function loginStudent(){
         return;
     }
 
-    const studentFound =
-    students.find(student =>
-
-        student.name.toLowerCase()
-        ===
-        name.toLowerCase()
-
-        &&
-
-        student.roll===roll
-    );
-
     const studentRef = doc(db, "students", roll);
 
 const studentSnap = await getDoc(studentRef);
@@ -148,14 +136,14 @@ if (studentData.publishStatus === "unpublished") {
 }
 
     localStorage.setItem(
-        "studentName",
-        studentFound.name
-    );
+    "studentName",
+    studentData.name
+);
 
-    localStorage.setItem(
-        "studentRoll",
-        studentFound.roll
-    );
+localStorage.setItem(
+    "studentRoll",
+    roll
+);
 
     localStorage.setItem(
     "selectedMonth",
