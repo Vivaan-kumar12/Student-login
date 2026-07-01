@@ -3,8 +3,7 @@ import { db } from "./Firebase.js";
 import {
   doc,
   setDoc,
-  getDoc,
-  updateDoc
+  getDoc
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 // ==========================
@@ -172,16 +171,11 @@ const studentList = [
 }
 
 ];
-alert("Student List End");
-alert(studentList.length);
-
 
 // ==========================
 // Student Table
 // ==========================
-alert("Before Table");
 const tableBody = document.getElementById("studentTable");
-alert(tableBody);
 
 if (tableBody) {
 
