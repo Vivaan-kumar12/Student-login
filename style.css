@@ -871,3 +871,36 @@ background-position:0% 50%;
 }
 
 }
+
+.input-box{
+
+position:relative;
+
+margin-bottom:16px;
+
+}
+
+.input-box span{
+
+position:absolute;
+
+left:18px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:18px;
+
+opacity:.8;
+
+pointer-events:none;
+
+}
+
+.input-box input,
+.input-box select{
+
+padding-left:50px;
+
+}
