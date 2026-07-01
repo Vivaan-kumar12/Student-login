@@ -1,3 +1,4 @@
+alert("Script Loaded");
 alert("Script JS Started");
 import { db } from "./Firebase.js";
 
