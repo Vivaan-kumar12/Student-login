@@ -454,3 +454,39 @@ await setDoc(
 }
 
 window.saveStudent = saveStudent;
+
+function searchStudent() {
+
+    const input =
+        document.getElementById("searchStudent")
+        .value.toLowerCase();
+
+    const rows =
+        document.querySelectorAll("#studentTable tr");
+
+    rows.forEach(row => {
+
+        const roll =
+            row.cells[0].textContent.toLowerCase();
+
+        const name =
+            row.cells[1].textContent.toLowerCase();
+
+        if (
+            roll.includes(input) ||
+            name.includes(input)
+        ) {
+
+            row.style.display = "";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+window.searchStudent = searchStudent;
