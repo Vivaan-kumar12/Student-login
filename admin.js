@@ -549,3 +549,32 @@ async function addStudent() {
 }
 
 window.addStudent = addStudent;
+
+async function deleteStudent(roll) {
+
+    const confirmDelete =
+        confirm("Delete this student permanently?");
+
+    if (!confirmDelete) return;
+
+    try {
+
+        await deleteDoc(doc(db, "students", roll));
+
+        alert("Student Deleted Successfully");
+
+        loadStudentTable();
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        alert(error.message);
+
+    }
+
+}
+
+window.deleteStudent = deleteStudent;
