@@ -126,7 +126,7 @@ document.getElementById("month").textContent =
 // Table
 
 let totalMarks = 0;
-let maxMarks = 0;
+let totalMaxMarks = 0;
 
 const table = document.getElementById("marksTable");
 
@@ -138,7 +138,7 @@ selectedResult.forEach(subject => {
   const marks = subject[3];
 
   totalMarks += marks;
-  maxMarks += max;
+  totalMaxMarks += max;
 
   const status =
     marks >= pass ? "Pass" : "Fail";
@@ -157,11 +157,11 @@ selectedResult.forEach(subject => {
 // Percentage
 
 const percentage =
-((totalMarks / maxMarks) * 100)
+((totalMarks / totalMaxMarks) * 100)
 .toFixed(2);
 
 document.getElementById("totalMarks").textContent =
-totalMarks + " / " + maxMarks;
+totalMarks + " / " + totalMaxMarks;
 
 document.getElementById("percentage").textContent =
 percentage + "%";
