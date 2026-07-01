@@ -182,6 +182,15 @@ if (studentSnap.exists()) {
 
     const firestoreData = studentSnap.data();
 
+    student.name =
+        firestoreData.name || student.name;
+
+    student.class =
+        firestoreData.class || student.class;
+
+    student.father =
+        firestoreData.father || student.father;
+
     student.attendance =
         firestoreData.attendance || student.attendance;
 
