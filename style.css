@@ -650,3 +650,226 @@ left:170%;
 }
 
 }
+
+
+/* ===== Chapter D1 - Part 3 ===== */
+
+.login-box{
+
+z-index:1;
+
+}
+
+.login-box::before{
+
+box-shadow:
+
+0 0 40px rgba(132,90,255,.18),
+
+0 0 80px rgba(92,160,255,.12),
+
+0 0 140px rgba(180,120,255,.08);
+
+animation:
+
+borderGlow 6s linear infinite,
+
+ambientGlow 5s ease-in-out infinite;
+
+}
+
+@keyframes ambientGlow{
+
+0%{
+
+transform:scale(1);
+
+filter:blur(0px);
+
+}
+
+50%{
+
+transform:scale(1.015);
+
+filter:blur(.3px);
+
+}
+
+100%{
+
+transform:scale(1);
+
+filter:blur(0px);
+
+}
+
+}
+
+/* ===== Chapter D1 - Part 4 ===== */
+
+.login-box button{
+
+background-size:250% 250%;
+
+animation:
+
+buttonGradient 6s ease infinite;
+
+}
+
+.login-box button:hover{
+
+letter-spacing:.6px;
+
+}
+
+.login-box button::after{
+
+content:"";
+
+position:absolute;
+
+inset:-2px;
+
+border-radius:50px;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,255,255,.22),
+
+transparent 70%
+
+);
+
+opacity:0;
+
+transition:.35s;
+
+pointer-events:none;
+
+}
+
+.login-box button:hover::after{
+
+opacity:1;
+
+animation:buttonPulse 1.6s ease infinite;
+
+}
+
+@keyframes buttonGradient{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+@keyframes buttonPulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+    }
+
+/* ===== Chapter D1 - Part 5 ===== */
+
+.login-box{
+
+position:relative;
+
+}
+
+.login-box .light-orb{
+
+display:none;
+
+}
+
+.login-box{
+
+background-image:
+
+radial-gradient(circle at 18% 22%,
+rgba(255,255,255,.10),
+transparent 16%),
+
+radial-gradient(circle at 82% 18%,
+rgba(140,170,255,.08),
+transparent 18%),
+
+radial-gradient(circle at 70% 78%,
+rgba(180,120,255,.08),
+transparent 18%);
+
+animation:floatingLights 10s ease-in-out infinite;
+
+}
+
+@keyframes floatingLights{
+
+0%{
+
+background-position:
+
+0% 0%,
+100% 0%,
+100% 100%;
+
+}
+
+50%{
+
+background-position:
+
+4% 3%,
+97% 4%,
+95% 96%;
+
+}
+
+100%{
+
+background-position:
+
+0% 0%,
+100% 0%,
+100% 100%;
+
+}
+
+    }
